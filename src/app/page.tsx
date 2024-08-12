@@ -2,8 +2,9 @@ import Dashboard from "@/components/dashboard";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+export default function Page() {
   return (
     <ScrollArea className="h-[90vh]">
       <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
@@ -19,14 +20,14 @@ export default function Home() {
                   truly professional website.
                 </p>
                 <div className="mt-8">
-                  <a
-                    href="#"
+                  <Link
+                    href="/dashboard"
                     title=""
                     className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-full shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700"
                     role="button"
                   >
                     Get 14 Days Free Trial
-                  </a>
+                  </Link>
                 </div>
                 <p className="mt-8 text-sm font-normal text-gray-400">
                   No credit card required • Cancel anytime
