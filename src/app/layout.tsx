@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { KindeProvider } from "@kinde-oss/kinde-auth-nextjs";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,8 +17,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    // <KindeProvider>
     <html lang="en">
-      <body className={`${inter.className} bg-primary dark:bg-secondary text-foreground`}>
+      <body
+        className={`${inter.className} bg-slate-200 dark:bg-slate-950 text-foreground`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -28,5 +32,6 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
+    // </KindeProvider>
   );
 }

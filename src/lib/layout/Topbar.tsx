@@ -30,10 +30,18 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import Image from "next/image";
+import { ModeToggle } from "@/components/ui/dark-mode";
 
-export default function Topbar() {
+export default async function Topbar() {
+  const { getUser } = getKindeServerSession();
+  const user = await getUser();
+
+  console.log(user);
   return (
-    <header className="flex h-14  items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">
+    <header className="flex h-14 items-center gap-4 sticky top-0  border-b-2 border-sky-900 bg-slate-300 dark:bg-slate-900 px-4 lg:h-[60px] lg:px-6">
       <Sheet>
         <SheetTrigger asChild>
           <Button variant="outline" size="icon" className="shrink-0 md:hidden">
@@ -120,9 +128,24 @@ export default function Topbar() {
         </form>
       </div>
       <DropdownMenu>
+          <div>
+            <ModeToggle />
+          </div>
         <DropdownMenuTrigger asChild>
           <Button variant="secondary" size="icon" className="rounded-full">
-            <CircleUser className="h-5 w-5" />
+            {user?.picture ? (
+              <>
+                <Image
+                  src={user?.picture}
+                  alt={"useremail"}
+                  width={32}
+                  height={32}
+                  className="rounded-full h-full w-full border-2  border-sky-500"
+                />
+              </>
+            ) : (
+              <CircleUser className="h-5 w-5" />
+            )}
             <span className="sr-only">Toggle user menu</span>
           </Button>
         </DropdownMenuTrigger>
@@ -132,7 +155,9 @@ export default function Topbar() {
           <DropdownMenuItem>Settings</DropdownMenuItem>
           <DropdownMenuItem>Support</DropdownMenuItem>
           <DropdownMenuSeparator />
-          <DropdownMenuItem>Logout</DropdownMenuItem>
+          <DropdownMenuItem>
+            <LogoutLink>Log out</LogoutLink>
+          </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
     </header>
