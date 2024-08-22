@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
@@ -30,12 +31,9 @@ const Footer = () => {
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="https://tailwindcss.com/"
-                      className="hover:underline"
-                    >
+                    <Link href="/docs" className="hover:underline">
                       Tailwind CSS
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
