@@ -9,7 +9,8 @@ const testimonials = [
     name: "Cameron Williamson",
     position: "Director of Technology, CreativeGIG",
     company: "cameron-logo.svg",
-    quote: "Rareblocks made it so simple. Our new site is so much beautiful and easier to work with than my old site. I just choose the page, make the change.",
+    quote:
+      "Rareblocks made it so simple. Our new site is so much beautiful and easier to work with than my old site.",
     image: "man.png",
   },
   {
@@ -17,7 +18,8 @@ const testimonials = [
     name: "Jane Smith",
     position: "CEO, TechInnovate",
     company: "cameron-logo.svg",
-    quote: "Using this product has transformed our business processes. It's intuitive, powerful, and exactly what we needed.",
+    quote:
+      "Using this product has transformed our business processes. It's intuitive, powerful, and exactly what we needed.",
     image: "man.png",
   },
   {
@@ -25,7 +27,8 @@ const testimonials = [
     name: "John Doe",
     position: "Marketing Director, GlobalReach",
     company: "cameron-logo.svg",
-    quote: "I can't imagine running our campaigns without this tool. It's become an indispensable part of our marketing strategy.",
+    quote:
+      "I can't imagine running our campaigns without this tool. It's become an indispensable part of our marketing strategy.",
     image: "man.png",
   },
 ];
@@ -86,7 +89,7 @@ const Testimonials = () => {
                   <div
                     key={testimonial.id}
                     className={`testimonial-slide ${
-                      index === currentIndex ? 'active' : ''
+                      index === currentIndex ? "active" : ""
                     }`}
                   >
                     <div className="flex flex-col">
@@ -125,8 +128,18 @@ const Testimonials = () => {
                       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                         <div className="flex items-end lg:order-1">
                           <div className="py-12 lg:pt-0 lg:pb-24 lg:w-1/2">
+                            <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-600 rounded-full">
+                              <svg
+                                className="w-auto h-6 text-white"
+                                viewBox="0 0 43 35"
+                                fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path d="M42.28 34.3H26.04C24.4533 29.1667 23.66 23.8467 23.66 18.34C23.66 12.74 25.1067 8.30666 28 5.03999C30.9867 1.68 35.3733 0 41.16 0V7.84C36.4933 7.84 34.16 10.6867 34.16 16.38V19.04H42.28V34.3ZM18.62 34.3H2.38C0.793333 29.1667 0 23.8467 0 18.34C0 12.74 1.44667 8.30666 4.34 5.03999C7.32667 1.68 11.7133 0 17.5 0V7.84C12.8333 7.84 10.5 10.6867 10.5 16.38V19.04H18.62V34.3Z" />
+                              </svg>
+                            </div>
                             <blockquote className="text-center lg:text-left">
-                              <p className="text-3xl font-roboto leading-relaxed text-gray-900 font-pj">
+                              <p className="text-3xl font-montserrat leading-snug text-gray-900">
                                 {testimonial.quote}
                               </p>
                             </blockquote>
