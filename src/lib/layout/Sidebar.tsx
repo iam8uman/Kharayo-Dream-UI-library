@@ -35,8 +35,8 @@ export default function Sidebar() {
           </Button>
         </div>
         <div className="flex-1">
-        <ScrollArea className="h-full w-full rounded-md border">
-        <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
+          <ScrollArea className="h-full w-full rounded-md border">
+            <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
               <Link
                 href="/dashboard"
                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
@@ -75,7 +75,6 @@ export default function Sidebar() {
                 <LineChart className="h-4 w-4" />
                 Analytics
               </Link>
-              
             </nav>
           </ScrollArea>
         </div>

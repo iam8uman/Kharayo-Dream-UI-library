@@ -13,8 +13,8 @@ export default function Page() {
       {/* <Landing /> */}
       <Hero />
       <FeaturesSection />
-      <Testimonials />
       <Feature />
+      <Testimonials />
       <Footer />
     </>
   );
