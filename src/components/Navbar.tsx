@@ -27,46 +27,38 @@ const Navbar = async () => {
           </div>
           <ul className="lg:flex flex-row items-center gap-2 p-1 hidden ">
             <li>
-              <a
-                href=""
-                className="px-2 backdrop:blur-md  hover:transparent  hover:bg-slate-200 dark:hover:bg-slate-600 ease-in-out rounded-full transition-all cursor-pointer"
-              >
-                Dashboard
-              </a>
+              {user ? (
+                <LoginLink className="flex  flex-row gap-2 items-center">
+                  <button className="p-2 rounded-full text-sky-500  hover:text-black hover:dark:text-white transition flex flex-row gap-2">
+                    Dashboard
+                  </button>
+                </LoginLink>
+              ) : (
+                <RegisterLink className="flex flex-row gap-2 items-center">
+                  <button className="p-2 rounded-full text-sky-500  hover:text-black hover:dark:text-white transition flex flex-row gap-2">
+                    Dashboard
+                  </button>
+                </RegisterLink>
+              )}
             </li>
             <li>
               <a
-                href=""
-                className="px-2 backdrop:blur-md  hover:transparent  hover:bg-slate-200 dark:hover:bg-slate-600 ease-in-out rounded-full transition-all cursor-pointer"
+                href="#feature"
+                className="px-2 backdrop:blur-md  text-sky-500  hover:text-black hover:dark:text-white ease-in-out rounded-full transition-all cursor-pointer"
               >
                 Activity
               </a>
             </li>
             <li>
               <a
-                href=""
-                className="px-3 backdrop:blur-md  hover:text-slate-600 ease-in-out rounded-full transition-all cursor-pointer"
+                href="#pricing"
+                className="px-3 backdrop:blur-md  text-sky-500  hover:text-black hover:dark:text-white ease-in-out rounded-full transition-all cursor-pointer"
               >
                 Pricing
               </a>
             </li>
             <div>
               <ModeToggle />
-            </div>
-            <div className="flex items-center">
-              {user ? (
-                <LoginLink className="flex  flex-row gap-2 items-center">
-                  <button className="p-2 rounded-full bg-sky-500 text-slate-950 dark:text-slate-100  hover:bg-sky-600 transition flex flex-row gap-2">
-                    <LogIn className="h-4 w-4" />
-                  </button>
-                </LoginLink>
-              ) : (
-                <RegisterLink className="flex flex-row gap-2 items-center">
-                  <button className="p-2 rounded-full bg-sky-500 text-slate-950 dark:text-slate-100 hover:bg-sky-600 transition flex flex-row gap-2">
-                    <LogInIcon className="h-4 w-4" />
-                  </button>
-                </RegisterLink>
-              )}
             </div>
           </ul>
           <div>
