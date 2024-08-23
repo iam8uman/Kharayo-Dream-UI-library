@@ -38,7 +38,7 @@ const Hero = async () => {
         {user ? (
           <LoginLink className="flex flex-row gap-2">
             <button className="py-3 px-5 rounded-full bg-sky-500 text-slate-950 dark:text-slate-100 mt-16 hover:bg-sky-600 transition flex flex-row gap-2">
-              <UserCheck2 className="h-5 w-5" />Login &#x2192;
+              <UserCheck2 className="h-5 w-5" />Get Started &#x2192;
             </button>
           </LoginLink>
         ) : (

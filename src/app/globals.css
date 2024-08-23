@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+.testimonial-slide {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.testimonial-slide.active {
+  opacity: 1;
+  position: relative;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
