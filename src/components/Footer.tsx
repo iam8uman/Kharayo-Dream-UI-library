@@ -33,15 +33,14 @@ const Footer = () => {
           </div>
 
           <div className="lg:flex  lg:items-center lg:justify-between mt-14 lg:mt-24">
-            <div className="flex flex-row items-start gap-3 text-2xl font-semibold text-sky-500">
+            <div className="flex flex-row items-center justify-center md:items-start gap-2 text-2xl md:text-4xl font-semibold text-sky-500">
               <Image
                 height={40}
                 width={40}
-                className="w-auto h-8 mx-auto lg:mx-0"
+                className="w-10 h-10 mx-2 lg:mx-0"
                 src="/SUI.png"
                 alt=""
               />
-
               <p>SUI - Dream UI</p>
             </div>
 
