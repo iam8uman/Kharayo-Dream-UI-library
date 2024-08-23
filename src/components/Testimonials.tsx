@@ -10,7 +10,7 @@ const testimonials = [
     position: "Director of Technology, CreativeGIG",
     company: "cameron-logo.svg",
     quote:
-      "Rareblocks made it so simple. Our new site is so much beautiful and easier to work with than my old site.",
+      "SUI made it so simple. Our new site is so much beautiful and easier to work with than my old site.",
     image: "man.png",
   },
   {
@@ -19,7 +19,7 @@ const testimonials = [
     position: "CEO, TechInnovate",
     company: "cameron-logo.svg",
     quote:
-      "Using this product has transformed our business processes. It's intuitive, powerful, and exactly what we needed.",
+      "Using SUI has transformed our business processes. It's intuitive, powerful, and exactly what we needed.",
     image: "man.png",
   },
   {
@@ -28,7 +28,7 @@ const testimonials = [
     position: "Marketing Director, GlobalReach",
     company: "cameron-logo.svg",
     quote:
-      "I can't imagine running our campaigns without this tool. It's become an indispensable part of our marketing strategy.",
+      "I can't imagine running our campaigns without SUI. It's become an indispensable part of our website.",
     image: "man.png",
   },
 ];

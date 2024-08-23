@@ -37,16 +37,24 @@ const Hero = async () => {
         </div>
         {user ? (
           <LoginLink className="flex flex-row gap-2">
-            <button className="py-3 px-5 rounded-full bg-sky-500 text-slate-950 dark:text-slate-100 mt-16 hover:bg-sky-600 transition flex flex-row gap-2">
-              <UserCheck2 className="h-5 w-5" />
-              Get Started &#x2192;
+            <button className="relative py-3 px-5 rounded-full text-slate-950 dark:text-slate-100 mt-16 hover:bg-sky-600 transition flex flex-row gap-2 overflow-hidden">
+              <span className="relative z-10">
+                <UserCheck2 className="h-5 w-5 inline-block" />
+                Get Started →
+              </span>
+              <span className="absolute inset-0 bg-gradient-to-r from-sky-400 to-purple-500 animate-gradient-x"></span>
+              <span className="absolute inset-[2px] bg-white dark:bg-slate-900 rounded-full"></span>
             </button>
           </LoginLink>
         ) : (
           <RegisterLink>
-            <button className="py-3 px-5 rounded-full bg-sky-500 text-slate-950 dark:text-slate-100 mt-16 hover:bg-sky-600 transition flex flex-row gap-2">
-              <User2Icon className="h-5 w-5" />
-              Register Now &#x2192;
+            <button className="relative py-3 px-5 rounded-full text-slate-950 dark:text-slate-100 mt-16 hover:bg-sky-600 transition flex flex-row gap-2 overflow-hidden">
+              <span className="relative z-10">
+                <UserCheck2 className="h-5 w-5 inline-block" />
+                Get Started →
+              </span>
+              <span className="absolute inset-0 bg-gradient-to-r from-sky-400 to-purple-500 animate-gradient-x"></span>
+              <span className="absolute inset-[2px] bg-white dark:bg-slate-900 rounded-full"></span>
             </button>
           </RegisterLink>
         )}
