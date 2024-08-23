@@ -53,7 +53,7 @@ const Navbar = async () => {
             <div>
               <ModeToggle />
             </div>
-            <div className="flex items-center h-12">
+            <div className="flex items-center">
               {user ? (
                 <LoginLink className="flex  flex-row gap-2 items-center">
                   <button className="p-2 rounded-full bg-sky-500 text-slate-950 dark:text-slate-100  hover:bg-sky-600 transition flex flex-row gap-2">
