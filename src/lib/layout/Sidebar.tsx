@@ -14,6 +14,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { navMenu } from "@/data/navMenu"; // Adjust the import path as needed
+import { cn } from "../utils";
 
 export default function Sidebar() {
   const currentPath = usePathname();
@@ -33,24 +34,26 @@ export default function Sidebar() {
         </div>
         <div className="flex-1">
           <ScrollArea className="h-full w-full border">
-            <nav className="grid items-start  text-sm font-medium">
+            <nav className="grid items-start text-sm font-medium">
               {navMenu.map((item) => {
                 const Icon = item.icon;
-                const isActive = currentPath === item.href;
+                const isActive = currentPath?.split("/")[2] === item.href?.split("/")[2];
                 return (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`flex items-center gap-3 px-4 py-2 transition-all ${
+                    className={cn(
+                      "group flex items-center text-[15px] gap-3 px-4 py-2 transition-all",
                       isActive
-                        ? "bg-sky-500 text-primary"
-                        : "text-muted-foreground hover:text-primary"
-                    }`}
+                        ? "bg-sky-500 text-white hover:bg-sky-500/90 hover:text-black"
+                        : "text-muted-foreground hover:text-primary",
+                      "opacity-80"
+                    )}
                   >
                     <Icon className="h-4 w-4" />
                     {item.label}
                     {item.badge && (
-                      <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
+                      <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white border-black">
                         {item.badge}
                       </Badge>
                     )}
