@@ -1,21 +1,32 @@
 "use client";
 
-// src/app/dashboard/navbar/[version]/page.tsx
 import React from "react";
 import { useParams } from "next/navigation";
-import { NavbarOne, NavbarTwo } from "@/components/dashboard/navbar";
+import { NavbarOne, CodexOne } from "@/components/dashboard/navbar/NavbarOne";
+import NavbarTwo from "@/components/dashboard/navbar/NavbarTwo"; // Import this if NavbarTwo exists
 import componentData from "@/lib/componentData";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const NavbarVersionPage: React.FC = () => {
   const version = useParams().version;
 
-  const renderComponent = () => {
+  const renderNavbar = () => {
     switch (version) {
       case "one":
         return <NavbarOne />;
       case "two":
         return <NavbarTwo />;
-      // Add more cases as needed
+      default:
+        return <p>Component not found</p>;
+    }
+  };
+
+  const renderPreview = () => {
+    switch (version) {
+      case "one":
+        return <CodexOne />;
+      case "two":
+        return <p>Preview not available for this version</p>;
       default:
         return <p>Component not found</p>;
     }
@@ -26,12 +37,26 @@ const NavbarVersionPage: React.FC = () => {
 
   return (
     <div>
-      <h1>{componentInfo?.title || "Navbar"}</h1>
-      <p>{componentInfo?.description || "Description not available"}</p>
-      <div className="demo">{renderComponent()}</div>
-      <pre className="code-snippet">
-        <code>{componentInfo?.code}</code>
-      </pre>
+      <Tabs defaultValue="preview" className="w-full">
+        <TabsList className="border-sky-600 border py-5 px-2">
+          <TabsTrigger value="preview" className="py-1.5 px-3">
+            Preview
+          </TabsTrigger>
+          <TabsTrigger value="codex" className="py-1.5 px-3">
+            CodeX
+          </TabsTrigger>
+        </TabsList>
+
+        <TabsContent value="preview">
+          <div className="demo">{renderNavbar()}</div>
+        </TabsContent>
+        <TabsContent value="codex">
+          <div className="demo">{renderPreview()}</div>
+          <pre className="code-snippet mt-4">
+            <code>{componentInfo?.codex}</code>
+          </pre>
+        </TabsContent>
+      </Tabs>
     </div>
   );
 };

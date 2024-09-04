@@ -6,9 +6,9 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section className="min-h-screen p-4">
+    <section className="">
       {/* Include shared UI here e.g. a header or sidebar */}
-      <VersionLayout />
+      {/* <VersionLayout /> */}
       {children}
     </section>
   );
