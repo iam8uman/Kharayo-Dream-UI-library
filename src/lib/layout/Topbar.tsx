@@ -54,7 +54,7 @@ export default async function Topbar() {
 
 
   return (
-    <header className="flex h-14 items-center gap-4 sticky top-0 border-b-2 border-sky-900 bg-slate-300 dark:bg-slate-900 px-4 lg:h-[60px] lg:px-6">
+    <header className="flex h-14 items-center gap-4 sticky top-0 border-b-2 border-slate-200 dark:border-slate-800 bg-slate-300 dark:bg-slate-900 px-4 lg:h-[60px] lg:px-6">
       <Sheet>
         <SheetTrigger asChild>
           <Button variant="outline" size="icon" className="shrink-0 md:hidden">

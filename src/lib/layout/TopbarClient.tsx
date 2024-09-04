@@ -17,7 +17,7 @@ import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { KindeUser } from "@kinde-oss/kinde-auth-nextjs/types";
 
 interface TopbarClientProps {
-  user: KindeUser | null;
+  user: KindeUser<any> | null;
   dropdownMenuItems: Array<{ label: string; action: string }>;
 }
 
