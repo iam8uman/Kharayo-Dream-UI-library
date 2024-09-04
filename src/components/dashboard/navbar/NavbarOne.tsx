@@ -39,7 +39,7 @@ function NavbarOne() {
 
 const CodexOne = () => {
   return (
-    <div className="bg-white p-8">
+    <div className="dark:bg-slate-200 bg-slate-900 p-8">
       <CodeBlock
         code={`<nav className="bg-gray-800 p-4 rounded-md">
 <div className="flex items-center justify-between">

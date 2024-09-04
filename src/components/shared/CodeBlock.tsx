@@ -44,20 +44,18 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ code }) => {
   };
 
   return (
-    <div className="bg-white">
-      <div className="bg-gray-900 rounded-md">
-        <button
-          className={`mt-6 text-black rounded-none flex flex-row items-center px-2 py-1 border border-black justify-end text-end ${
-            isCopied ? "bg-white text-black" : "bg-sky-500 text-white"
-          }`}
-          onClick={handleCopy}
-        >
-          <CopyIcon className="mr-2 mt-1 h-4 w-4" /> Copy Code
-        </button>
-        <SyntaxHighlighter language="tsx" style={nightOwl}>
-          {code}
-        </SyntaxHighlighter>
-      </div>
+    <div className="bg-gray-900 rounded-md">
+      <button
+        className={`mt-4 text-black rounded-none flex flex-row items-center px-2 py-1 border border-black justify-end text-end ${
+          isCopied ? "bg-white text-black" : "bg-sky-500 text-white"
+        }`}
+        onClick={handleCopy}
+      >
+        <CopyIcon className="mr-2 mt-1 h-4 w-4" /> Copy Code
+      </button>
+      <SyntaxHighlighter language="tsx" style={nightOwl}>
+        {code}
+      </SyntaxHighlighter>
     </div>
   );
 };
