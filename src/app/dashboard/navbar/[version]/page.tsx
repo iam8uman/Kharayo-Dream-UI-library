@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useParams } from "next/navigation";
-import { NavbarOne, CodexOne } from "@/components/dashboard/navbar/(navbarone)/main";
+import { NavbarOne, CodexOne } from "@/components/dashboard/navbar/(navbar1)/main";
 import {NavbarTwo, CodexTwo} from "@/components/dashboard/navbar/(navbar2)/Main"; // Import this if NavbarTwo exists
 import componentData from "@/lib/componentData";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";

@@ -28,9 +28,11 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ code }) => {
       >
         <CopyIcon className="mr-2 mt-1 h-4 w-4" /> Copy Code
       </button>
-      <SyntaxHighlighter language="tsx" style={nightOwl}>
-        {code}
-      </SyntaxHighlighter>
+      <div className="overflow-x-auto overflow-y-auto max-h-96 w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-[68rem] p-4 sm:p-6">
+        <SyntaxHighlighter language="tsx" style={nightOwl}>
+          {code}
+        </SyntaxHighlighter>
+      </div>
     </div>
   );
 };

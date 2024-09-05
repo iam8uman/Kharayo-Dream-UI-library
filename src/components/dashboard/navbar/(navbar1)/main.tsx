@@ -1,8 +1,8 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 import { CodeBlock } from "@/components/shared/CodeBlock";
-import { componentToString } from "@/lib/componentToString";
 import Example, { actualCodeString } from "./NavbarOne";
+import { ScrollArea } from "@radix-ui/react-scroll-area";
 
 function NavbarOne() {
   return (
@@ -17,7 +17,7 @@ function NavbarOne() {
 
 const CodexOne = () => {
   return (
-    <div className="dark:bg-slate-200 bg-slate-900 p-8">
+    <div className="dark:bg-slate-200 bg-slate-900 p-8  overflow-x-auto overflow-hidden">
       <CodeBlock code={`${actualCodeString}`} />
     </div>
   );
