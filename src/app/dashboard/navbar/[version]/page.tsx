@@ -2,31 +2,38 @@
 
 import React from "react";
 import { useParams } from "next/navigation";
-import { NavbarOne, CodexOne } from "@/components/dashboard/navbar/NavbarOne";
-import NavbarTwo from "@/components/dashboard/navbar/NavbarTwo"; // Import this if NavbarTwo exists
+import { NavbarOne, CodexOne } from "@/components/dashboard/navbar/(navbarone)/main";
+import {NavbarTwo, CodexTwo} from "@/components/dashboard/navbar/(navbar2)/Main"; // Import this if NavbarTwo exists
 import componentData from "@/lib/componentData";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
 
 const NavbarVersionPage: React.FC = () => {
   const version = useParams().version;
 
   const renderNavbar = () => {
     switch (version) {
-      case "one":
+      case "1":
         return <NavbarOne />;
-      case "two":
+      case "2":
         return <NavbarTwo />;
       default:
-        return <p>Component not found</p>;
+        return (
+          <div className="p-4 bg-slate-200  text-white">
+            <p className="text-3xl bg-slate-900 p-4 rounded-md h-52 items-center justify-center flex text-sky-500">
+              Comming Soon...
+            </p>
+          </div>
+        );
     }
   };
 
   const renderPreview = () => {
     switch (version) {
-      case "one":
+      case "1":
         return <CodexOne />;
-      case "two":
-        return <p>Preview not available for this version</p>;
+      case "2":
+        return <CodexTwo />;
       default:
         return <p>Component not found</p>;
     }

@@ -10,7 +10,9 @@ const nextConfig = {
         "cdn.rareblocks.xyz",
         "api.microlink.io",
         "plus.unsplash.com",
-        "lh3.googleusercontent.com" 
+        "lh3.googleusercontent.com" ,
+        "tailwindui.com",
+        "images.pexels.com"
       ],
     },
   };

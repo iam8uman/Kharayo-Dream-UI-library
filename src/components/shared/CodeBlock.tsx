@@ -1,33 +1,8 @@
+// src/components/shared/CodeBlock.tsx
 import { CopyIcon } from "lucide-react";
 import React, { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import {
-  coldarkDark,
-  darcula,
-  coy,
-  dark,
-  dracula,
-  duotoneDark,
-  duotoneEarth,
-  duotoneForest,
-  duotoneLight,
-  duotoneSea,
-  duotoneSpace,
-  funky,
-  ghcolors,
-  hopscotch,
-  materialDark,
-  materialLight,
-  nord,
-  okaidia,
-  pojoaque,
-  synthwave84,
-  tomorrow,
-  twilight,
-  vscDarkPlus,
-  xonokai,
-  nightOwl,
-} from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { nightOwl } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 interface CodeBlockProps {
   code: string;

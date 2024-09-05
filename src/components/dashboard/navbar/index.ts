@@ -1,4 +1,4 @@
-import { NavbarOne, CodexOne } from "./NavbarOne";
-import NavbarTwo from "./NavbarTwo";
+import { NavbarOne, CodexOne } from "./(navbarone)/main";
+import NavbarTwo from "./(navbar2)/Main";
 
 export { NavbarOne, NavbarTwo, CodexOne };
