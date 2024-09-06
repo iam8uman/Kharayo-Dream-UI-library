@@ -1,29 +1,88 @@
+"use client";
+
 import React from "react";
+import { useParams } from "next/navigation";
+import {
+  NavbarOne,
+  CodexOne,
+  InstallationOne,
+} from "@/components/dashboard/navbar/(navbar1)/main";
+import {
+  NavbarTwo,
+  CodexTwo,
+} from "@/components/dashboard/navbar/(navbar2)/Main"; // Import this if NavbarTwo exists
+import componentData from "@/lib/componentData";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-const VersionLayout = () => {
+const VersionLayout: React.FC = () => {
+  const version = useParams().version;
+
+  const renderNavbar = () => {
+    switch (version) {
+      case "1":
+        return <NavbarOne />;
+      case "2":
+        return <NavbarTwo />;
+      default:
+        return (
+          <div className="p-4 bg-slate-200 text-white">
+            <p className="text-3xl bg-slate-900 p-4 rounded-md h-52 items-center justify-center flex text-sky-500">
+              Coming Soon...
+            </p>
+          </div>
+        );
+    }
+  };
+
+  const renderPreview = () => {
+    switch (version) {
+      case "1":
+        return <CodexOne />;
+      case "2":
+        return <CodexTwo />;
+      default:
+        return <p>Component not found</p>;
+    }
+  };
+
+  const renderInstallation = () => {
+    switch (version) {
+      case "1":
+        return <InstallationOne />;
+      case "2":
+        return <InstallationOne />;
+      default:
+        return <p>Component not found</p>;
+    }
+  };
+
+  const componentInfo =
+    componentData.navbar[version as keyof typeof componentData.navbar];
+
   return (
-    <div>
+    <>
       <Tabs defaultValue="preview" className="w-full">
-        <TabsList className=" border-sky-600 border py-5 px-2 ">
-          <TabsTrigger
-            value="preview"
-            className=" active:text-black py-1.5 px-3"
-          >
+        <TabsList className="border-sky-600 border py-5 px-2">
+          <TabsTrigger value="preview" className="py-1.5 px-3">
             Preview
           </TabsTrigger>
-          <TabsTrigger value="codex" className=" active:text-black py-1.5 px-3">
+          <TabsTrigger value="codex" className="py-1.5 px-3">
             CodeX
           </TabsTrigger>
         </TabsList>
+
         <TabsContent value="preview">
-          {/* <PreviewComponent /> */}
+          <div className="demo">{renderNavbar()}</div>
         </TabsContent>
         <TabsContent value="codex">
-          {/* <CodexComponent /> */}
+          <div className="demo">{renderPreview()}</div>
+          <pre className="code-snippet mt-4">
+            <code>{componentInfo?.codex}</code>
+          </pre>
         </TabsContent>
       </Tabs>
-    </div>
+      <div className="div my-10">{renderInstallation()}</div>
+    </>
   );
 };
 

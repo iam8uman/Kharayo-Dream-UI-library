@@ -1,8 +1,13 @@
-// src/components/shared/CodeBlock.tsx
-import { CopyIcon } from "lucide-react";
+"use client"
+
+import { CopyIcon, CheckIcon } from "lucide-react";
 import React, { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { nightOwl } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import {
+  nightOwl,
+  vs,
+  darcula,
+} from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 interface CodeBlockProps {
   code: string;
@@ -26,7 +31,12 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ code }) => {
         }`}
         onClick={handleCopy}
       >
-        <CopyIcon className="mr-2 mt-1 h-4 w-4" /> Copy Code
+        {isCopied ? (
+          <CheckIcon className="h-4 w-4 mr-2" />
+        ) : (
+          <CopyIcon className="h-4 w-4 mr-2" />
+        )}
+        {isCopied ? "Copied!" : "Copy"}
       </button>
       <div className="overflow-x-auto overflow-y-auto max-h-96 w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-[68rem] p-4 sm:p-6">
         <SyntaxHighlighter language="tsx" style={nightOwl}>

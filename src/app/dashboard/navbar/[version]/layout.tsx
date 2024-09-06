@@ -1,3 +1,4 @@
+import React from "react";
 import VersionLayout from "./versionLayout";
 
 export default function DashboardLayout({
@@ -8,7 +9,7 @@ export default function DashboardLayout({
   return (
     <section className="">
       {/* Include shared UI here e.g. a header or sidebar */}
-      {/* <VersionLayout /> */}
+      <VersionLayout />
       {children}
     </section>
   );
