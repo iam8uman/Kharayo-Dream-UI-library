@@ -15,7 +15,6 @@ import Image from "next/image";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 
-
 const user = {
   name: "Tom Cook",
   email: "tom@example.com",
@@ -434,8 +433,10 @@ export default function NavbarOne() {
 }
 `;
 
-
-const InstallationStep: React.FC<{ title: string; children: React.ReactNode }> = ({ title, children }) => (
+const InstallationStep: React.FC<{
+  title: string;
+  children: React.ReactNode;
+}> = ({ title, children }) => (
   <div className="mb-6">
     <h2 className="text-xl font-semibold mb-2">{title}</h2>
     {children}
@@ -454,29 +455,17 @@ export function InstallationPage({ steps }: InstallationPageProps) {
     <div className="min-h-screen pt-6 bg-white text-black dark:bg-gray-900 dark:text-white mt-16">
       <h1 className="text-3xl font-bold mb-6">Installation</h1>
 
-      <Tabs defaultValue="manual" className="w-full">
-        <TabsList className="mb-6">
-          <TabsTrigger value="cli">CLI</TabsTrigger>
-          <TabsTrigger value="manual">Manual</TabsTrigger>
-        </TabsList>
-
-        <TabsContent value="cli">
-          {/* CLI content here */}
-          <p>CLI installation instructions will go here.</p>
-        </TabsContent>
-
-        <TabsContent value="manual">
-          <Card className="bg-gray-100 border-gray-300 dark:bg-gray-800 dark:border-gray-700">
-            <CardContent className="pt-6">
-              {steps.map((step, index) => (
-                <InstallationStep key={index} title={step.title}>
-                  {step.content}
-                </InstallationStep>
-              ))}
-            </CardContent>
-          </Card>
-        </TabsContent>
-      </Tabs>
+      <div>
+        <Card className="bg-gray-100 border-gray-300 dark:bg-gray-800 dark:border-gray-700">
+          <CardContent className="pt-6">
+            {steps.map((step, index) => (
+              <InstallationStep key={index} title={step.title}>
+                {step.content}
+              </InstallationStep>
+            ))}
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }

@@ -2,7 +2,6 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import { CodeBlock } from "@/components/shared/CodeBlock";
 import Example, { actualCodeString, InstallationPage } from "./NavbarOne";
-import { ScrollArea } from "@radix-ui/react-scroll-area";
 
 function NavbarOne() {
   return (
@@ -25,11 +24,11 @@ const CodexOne = () => {
 
 const steps = [
   {
-    title: "Install dependencies",
+    title: "📍 Install dependencies",
     content: <CodeBlock code={`pnpm i @headlessui/react`} />,
   },
   {
-    title: "Add util file",
+    title: "📍 Add util file",
     content: (
       <>
         <p className="mb-2">lib/utils.ts</p>
@@ -47,7 +46,7 @@ export function cn(...inputs: ClassValue[]) {
     ),
   },
   {
-    title: "Add the following code in tailwind.config.js file",
+    title: "📍 Add the following code in tailwind.config.js file",
     content: (
       <CodeBlock
         code={`
@@ -71,7 +70,11 @@ module.exports = {
 ];
 
 const InstallationOne = () => {
-  return <InstallationPage steps={steps} />;
+  return (
+    <div className="">
+      <InstallationPage steps={steps} />
+    </div>
+  );
 };
 
 export { NavbarOne, CodexOne, InstallationOne };

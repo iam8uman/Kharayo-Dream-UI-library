@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "next/navigation";
 import {
   NavbarOne,
@@ -10,12 +10,19 @@ import {
 import {
   NavbarTwo,
   CodexTwo,
+  InstallationTwo,
 } from "@/components/dashboard/navbar/(navbar2)/Main"; // Import this if NavbarTwo exists
 import componentData from "@/lib/componentData";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const VersionLayout: React.FC = () => {
   const version = useParams().version;
+
+  useEffect(() => {
+    // Scroll to the top whenever the version changes
+    window.scrollTo(0, 0);
+  }, [version]);
+
 
   const renderNavbar = () => {
     switch (version) {
@@ -50,7 +57,7 @@ const VersionLayout: React.FC = () => {
       case "1":
         return <InstallationOne />;
       case "2":
-        return <InstallationOne />;
+        return <InstallationTwo />;
       default:
         return <p>Component not found</p>;
     }
@@ -60,7 +67,7 @@ const VersionLayout: React.FC = () => {
     componentData.navbar[version as keyof typeof componentData.navbar];
 
   return (
-    <>
+    <div className=" w-full flex-1">
       <Tabs defaultValue="preview" className="w-full">
         <TabsList className="border-sky-600 border py-5 px-2">
           <TabsTrigger value="preview" className="py-1.5 px-3">
@@ -81,8 +88,8 @@ const VersionLayout: React.FC = () => {
           </pre>
         </TabsContent>
       </Tabs>
-      <div className="div my-10">{renderInstallation()}</div>
-    </>
+      <div className="demo">{renderInstallation()}</div>
+    </div>
   );
 };
 
