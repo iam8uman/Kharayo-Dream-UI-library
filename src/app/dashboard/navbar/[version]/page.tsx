@@ -3,11 +3,11 @@ import { Blockquote, BlockquoteAuthor } from "@/components/ui/backquote";
 
 const Page = () => {
   return (
-    <div>
+    <div className="px-4">
       <Blockquote className="my-10">
         Happiness lies not in the mere possession of money; it lies in the joy
         of achievement, in the thrill of creative effort.
-        <div className="space-x-1 flex justify-end items-center text-lg font-serif">
+        <div className="space-x-1 flex justify-end items-center text-lg font-semibold">
           <div className="font-semibold text-gray-100">Suman Sharma</div>
           <svg
             width={3}

@@ -1,4 +1,6 @@
 import {
+  Check,
+  CheckCircle,
   ChefHat,
   Layers,
   LogInIcon,
@@ -13,6 +15,7 @@ import {
   LoginLink,
 } from "@kinde-oss/kinde-auth-nextjs/components";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import Link from "next/link";
 
 const Hero = async () => {
   const { getUser } = getKindeServerSession();
@@ -27,17 +30,34 @@ const Hero = async () => {
         <h1 className="w-full text-3xl md:text-4xl lg:text-7xl max-w-3xl text-slate-950 dark:text-slate-100 font-bold text-center mt-3">
           Dream UI <span className="text-sky-500">Library!</span>
         </h1>
-        <div className="text-center lg:text-xl text-slate-95/70 dark:text-slate-100/70 mx-2 mt-10 max-w-xl">
+        <div className="text-center lg:text-xl text-slate-95/70 dark:text-slate-100/70 mx-2 mt-6 max-w-xl">
           We care about your productivity and effeciency. Powered by{" "}
-          <span>
-            {" "}
-            Nextjs, Typescript, Tailwindcss, Framer-motion and ShadcnUI{" "}
-          </span>
-          .
+          <div className="flex flex-col ml-20">
+            <div className="flex flex-row justify-start items-center text-[16px] gap-4">
+            <CheckCircle size={20} className="dark:text-green-500 text-sky-500" />{" "}
+            <span>Shadcn Components</span>
+            </div>
+            <div className="flex flex-row justify-start items-center text-[16px] gap-4">
+            <CheckCircle size={20} className="dark:text-green-500 text-sky-500" />{" "}
+            <span>Nextjs & Typescript Based</span>
+            </div>
+            <div className="flex flex-row justify-start items-center text-[16px] gap-4">
+              <CheckCircle size={20} className="dark:text-green-500 text-sky-500" />{" "}
+              <span>Tailwindcss & Lucide Icons support</span>
+            </div>
+            <div className="flex flex-row justify-start items-center text-[16px] gap-4">
+            <CheckCircle size={20} className="dark:text-green-500 text-sky-500" />{" "}
+            <span>Reusable & Responsive components</span>
+            </div>
+            <div className="flex flex-row justify-start items-center text-[16px] gap-4">
+            <CheckCircle size={20} className="dark:text-green-500 text-sky-500" />{" "}
+            <span>Framer animation & smooth scroll</span>
+            </div>
+          </div>
         </div>
         {user ? (
           <LoginLink className="flex flex-row gap-2">
-            <button className="relative py-3 px-5 rounded-full text-slate-950 dark:text-slate-100 mt-16 hover:bg-sky-600 transition flex flex-row gap-2 overflow-hidden">
+            <button className="relative py-3 px-5 rounded-full text-slate-950 dark:text-slate-100 mt-6 hover:bg-sky-600 transition flex flex-row gap-2 overflow-hidden">
               <span className="relative z-10">
                 <UserCheck2 className="h-5 w-5 inline-block" />
                 Get Started →
@@ -47,16 +67,16 @@ const Hero = async () => {
             </button>
           </LoginLink>
         ) : (
-          <RegisterLink>
-            <button className="relative py-3 px-5 rounded-full text-slate-950 dark:text-slate-100 mt-16 hover:bg-sky-600 transition flex flex-row gap-2 overflow-hidden">
+          <Link href={"/dashboard"}>
+            <button className="relative py-3 px-5 rounded-full text-slate-950 dark:text-slate-100 mt-6 hover:bg-sky-600 transition flex flex-row gap-2 overflow-hidden">
               <span className="relative z-10">
-                <UserCheck2 className="h-5 w-5 inline-block" />
+                {/* <UserCheck2 className="h-5 w-5 inline-block" /> */}
                 Get Started →
               </span>
               <span className="absolute inset-0 bg-gradient-to-r from-sky-400 to-purple-500 animate-gradient-x"></span>
               <span className="absolute inset-[2px] bg-white dark:bg-slate-900 rounded-full"></span>
             </button>
-          </RegisterLink>
+          </Link>
         )}
 
         <div className="flex items-center justify-center gap-5 uppercase text-slate-950 dark:text-slate-100 text-sm lg:text-xl font-semibold mt-10">

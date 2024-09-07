@@ -25,7 +25,7 @@ const CodexThree = () => {
 const steps = [
   {
     title: "📍 Install dependencies",
-    content: <CodeBlock code={`pnpm add next-themes`} />,
+    content: <CodeBlock code={`pnpm add next-themes lucide-react`} />,
   },
   {
     title: "📍 Add dark-mode file",

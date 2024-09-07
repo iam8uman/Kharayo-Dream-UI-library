@@ -20,7 +20,7 @@ export default function Sidebar() {
   const currentPath = usePathname();
 
   return (
-    <div className="hidden sticky top-0 bg-slate-300 dark:bg-black max-h-screen md:block">
+    <div className="hidden sticky top-0 bg-slate-300 dark:bg-black  max-h-screen md:block">
       <div className="flex h-full max-h-screen flex-col">
         <div className="flex h-14 items-center border-b border-sky-500 px-4 lg:h-[60px] lg:px-6">
           <Link href="/" className="flex items-center gap-2 font-semibold">
@@ -45,15 +45,15 @@ export default function Sidebar() {
                     className={cn(
                       "group flex items-center text-[15px] gap-3 px-4 py-2 transition-all",
                       isActive
-                        ? "bg-sky-500 text-white hover:bg-sky-500/90 hover:text-black"
-                        : "text-muted-foreground hover:text-primary",
-                      "opacity-80"
+                        ? "bg-sky-500 text-black dark:text-white hover:bg-sky-500/90 hover:text-white "
+                        : "text-muted-foreground dark:text-slate-500 hover:text-black hover:dark:text-white",
+                      ""
                     )}
                   >
                     <Icon className="h-4 w-4" />
                     {item.label}
                     {item.badge && (
-                      <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white border-black">
+                      <Badge className="ml-auto w-6 flex shrink-0 items-center justify-center rounded-full bg-white dark:text-black text-black border-black">
                         {item.badge}
                       </Badge>
                     )}

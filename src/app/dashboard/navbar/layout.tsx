@@ -1,14 +1,65 @@
+import React from "react";
+import Head from "next/head";
 import PreLayout from "./pre-layout";
+import { Metadata } from "next";
+
+interface DashboardLayoutProps {
+  children: React.ReactNode;
+  title?: string;
+  description?: string;
+}
+
+export const metadata: Metadata = {
+  title: "Navbar | SUI The DREAM UI Components for Web Development",
+  description:
+    "Explore and manage your UI components with SUI Dashboard. Built with Next.js, Tailwind CSS, and Framer Motion for efficient web development.",
+  keywords:
+    "UI dashboard, component management, Next.js, Tailwind CSS, Framer Motion, web development tools",
+  openGraph: {
+    title: "SUI Dashboard | UI Component Management",
+    description:
+      "Streamline your web development process with SUI Dashboard. Manage and customize UI components effortlessly.",
+    type: "website",
+    url: "https://sui.whysumancode.com/dashboard/navbar",
+    images: "https://sui.whysumancode.com/dashboard-og-image.jpg",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SUI Dashboard | Web UI Tools",
+    description:
+      "Powerful dashboard for managing modern UI components. Built for developers, by developers.",
+    images: "https://sui.whysumancode.com/dashboard-twitter-image.jpg",
+  },
+};
 
 export default function DashboardLayout({
-  children, // will be a page or nested layout
-}: {
-  children: React.ReactNode;
-}) {
+  children,
+  title = "Navbar | SUI The DREAM UI",
+  description = "Experience the future of UI design with SUI - The DREAM UI. Streamline your development process with our innovative and intuitive components.",
+}: DashboardLayoutProps) {
   return (
-    <section>
-      <PreLayout />
-      <div className="p-4">{children}</div>
-    </section>
+    <>
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://sui.whysumancode.com" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://sui.whysumancode.com" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+      </Head>
+      <section className="min-h-screen flex flex-col">
+        <main className="flex-grow">
+          <PreLayout />
+          {children}
+        </main>
+        <footer>{/* Add your footer content here */}</footer>
+      </section>
+    </>
   );
 }

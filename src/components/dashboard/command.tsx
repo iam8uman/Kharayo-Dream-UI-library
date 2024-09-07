@@ -49,14 +49,18 @@ export default function CommandComponent() {
         </div>
       </div>
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <div className="cover bg-slate-900 border-sky-300 border rounded-md m-0.5">
+        <div className="cover bg-slate-100 dark:bg-slate-900 text-slate-950 dark:text-slate-100 border-sky-900 border rounded-lg ">
           <CommandInput placeholder="Type a command or search..." />
           <CommandList>
             <CommandEmpty>No results found.</CommandEmpty>
             <CommandGroup heading="Navigation">
               {navMenu.map((item, index) => (
                 <CommandItem key={item.label} ref={itemRefs.current[index]}>
-                  <Link href={item.href} className="w-full flex flex-row justify-start items-center">
+                  <Link
+                    href={item.href}
+                    onClick={() => setOpen(false)}
+                    className="w-full flex flex-row justify-start items-center "
+                  >
                     <item.icon className="mr-2 h-4 w-4" />
                     <span>{item.label}</span>
                     {item.badge && (

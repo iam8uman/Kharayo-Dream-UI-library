@@ -12,7 +12,7 @@ export const navMenu = [
     href: "/dashboard/navbar",
     label: "Navbar",
     icon: ShoppingCart,
-    badge: 6,
+    badge: 7,
   },
   {
     href: "/dashboard/hero",

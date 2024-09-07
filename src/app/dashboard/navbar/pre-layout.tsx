@@ -46,7 +46,7 @@ const PreLayout: React.FC = () => {
         </BreadcrumbList>
       </Breadcrumb>
 
-      <div className="text-4xl text-start items-top mt-4">Navbar </div>
+      <div className="text-4xl text-start items-top mt-6">Navbar </div>
       <div className="text-sm text-slate-500 text-start items-top">
         A collection of links for navigating websites.
       </div>

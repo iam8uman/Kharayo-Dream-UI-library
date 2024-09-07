@@ -14,7 +14,16 @@ import {
 } from "@/components/dashboard/navbar/(navbar2)/Main"; // Import this if NavbarTwo exists
 import componentData from "@/lib/componentData";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { CodexThree, InstallationThree, NavbarThree } from "@/components/dashboard/navbar/(navbar3)/main";
+import {
+  CodexThree,
+  InstallationThree,
+  NavbarThree,
+} from "@/components/dashboard/navbar/(navbar3)/main";
+import {
+  CodexFour,
+  InstallationFour,
+  NavbarFour,
+} from "@/components/dashboard/navbar/(navbar4)/main";
 
 const VersionLayout: React.FC = () => {
   const version = useParams().version;
@@ -24,7 +33,6 @@ const VersionLayout: React.FC = () => {
     window.scrollTo(0, 0);
   }, [version]);
 
-
   const renderNavbar = () => {
     switch (version) {
       case "1":
@@ -33,6 +41,8 @@ const VersionLayout: React.FC = () => {
         return <NavbarTwo />;
       case "3":
         return <NavbarThree />;
+      case "4":
+        return <NavbarFour />;
       default:
         return (
           <div className="p-4 bg-slate-200 text-white">
@@ -52,6 +62,8 @@ const VersionLayout: React.FC = () => {
         return <CodexTwo />;
       case "3":
         return <CodexThree />;
+      case "4":
+        return <CodexFour />;
       default:
         return <p>Component not found</p>;
     }
@@ -63,8 +75,10 @@ const VersionLayout: React.FC = () => {
         return <InstallationOne />;
       case "2":
         return <InstallationTwo />;
-        case "3":
+      case "3":
         return <InstallationThree />;
+      case "4":
+        return <InstallationFour />;
       default:
         return <p>Component not found</p>;
     }
@@ -74,7 +88,7 @@ const VersionLayout: React.FC = () => {
     componentData.navbar[version as keyof typeof componentData.navbar];
 
   return (
-    <div className=" w-full flex-1">
+    <div className="px-4 mt-6 w-full flex-1">
       <Tabs defaultValue="preview" className="w-full">
         <TabsList className="border-sky-600 border py-5 px-2">
           <TabsTrigger value="preview" className="py-1.5 px-3">
