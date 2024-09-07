@@ -5,6 +5,9 @@ import { Metadata } from "next";
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
+  params: {
+    version: string;
+  };
   title?: string;
   description?: string;
 }
@@ -32,26 +35,49 @@ export const metadata: Metadata = {
   },
 };
 
-export default function DashboardLayout({
+export default function NavbarLayout({
   children,
-  title = "Navbar | SUI The DREAM UI",
-  description = "Experience the future of UI design with SUI - The DREAM UI. Streamline your development process with our innovative and intuitive components.",
-}: DashboardLayoutProps) {
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <>
       <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
+        <title>
+          {"Navbar | SUI The DREAM UI Components for Web Development"}
+        </title>
+        <meta
+          name="description"
+          content={
+            "Explore and manage your UI components with SUI Dashboard. Built with Next.js, Tailwind CSS, and Framer Motion for efficient web development."
+          }
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://sui.whysumancode.com" />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
+        <meta
+          property="og:title"
+          content={"Navbar | SUI The DREAM UI Components for Web Development"}
+        />
+        <meta
+          property="og:description"
+          content={
+            "Explore and manage your UI components with SUI Dashboard. Built with Next.js, Tailwind CSS, and Framer Motion for efficient web development."
+          }
+        />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://sui.whysumancode.com" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
+        <meta
+          name="twitter:title"
+          content={"Navbar | SUI The DREAM UI Components for Web Development"}
+        />
+        <meta
+          name="twitter:description"
+          content={
+            "Explore and manage your UI components with SUI Dashboard. Built with Next.js, Tailwind CSS, and Framer Motion for efficient web development."
+          }
+        />
       </Head>
       <section className="min-h-screen flex flex-col">
         <main className="flex-grow">
