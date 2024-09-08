@@ -24,6 +24,11 @@ import {
   InstallationFour,
   NavbarFour,
 } from "@/components/dashboard/navbar/(navbar4)/main";
+import {
+  CodexFive,
+  InstallationFive,
+} from "@/components/dashboard/navbar/(navbar5)/main";
+import NavbarFive from "@/components/dashboard/navbar/(navbar5)/NavbarFive";
 
 const VersionLayout: React.FC = () => {
   const version = useParams().version;
@@ -43,6 +48,8 @@ const VersionLayout: React.FC = () => {
         return <NavbarThree />;
       case "4":
         return <NavbarFour />;
+      case "5":
+        return <NavbarFive />;
       default:
         return (
           <div className="p-4 bg-slate-200 text-white">
@@ -64,8 +71,10 @@ const VersionLayout: React.FC = () => {
         return <CodexThree />;
       case "4":
         return <CodexFour />;
+      case "5":
+        return <CodexFive />;
       default:
-        return <p>Component not found</p>;
+        return <p>Component Comming Soon!!!</p>;
     }
   };
 
@@ -79,8 +88,10 @@ const VersionLayout: React.FC = () => {
         return <InstallationThree />;
       case "4":
         return <InstallationFour />;
+      case "5":
+        return <InstallationFive />;
       default:
-        return <p>Component not found</p>;
+        return <p>Component Comming soon!</p>;
     }
   };
 
