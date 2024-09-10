@@ -51,8 +51,8 @@ export default function Example() {
                     height={32}
                     width={32}
                     alt="Your Company"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                    className="h-8 w-8"
+                    src="https://tailwindui.com/img/logos/mark.svg"
+                    className="h-8 rounded-xl w-auto bg-white"
                   />
                 </div>
                 <div className="hidden md:block">
