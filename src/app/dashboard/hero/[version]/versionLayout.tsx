@@ -4,7 +4,26 @@ import React, { useEffect } from "react";
 import { useParams } from "next/navigation";
 import componentData from "@/lib/componentData";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { CodexOne, HeroOne, InstallationOne } from "@/components/dashboard/hero/(hero1)/main";
+import {
+  CodexOne,
+  HeroOne,
+  InstallationOne,
+} from "@/components/dashboard/hero/(hero1)/main";
+import { HeroTwo } from "@/components/dashboard/hero";
+import {
+  CodexTwo,
+  InstallationTwo,
+} from "@/components/dashboard/hero/(hero2)/main";
+import {
+  CodexThree,
+  HeroThree,
+  InstallationThree,
+} from "@/components/dashboard/hero/(hero3)/main";
+import {
+  CodexFour,
+  HeroFour,
+  InstallationFour,
+} from "@/components/dashboard/hero/(hero4)/main";
 
 const VersionLayout: React.FC = () => {
   const version = useParams().version;
@@ -18,6 +37,12 @@ const VersionLayout: React.FC = () => {
     switch (version) {
       case "1":
         return <HeroOne />;
+      case "2":
+        return <HeroTwo />;
+      case "3":
+        return <HeroThree />;
+      case "4":
+        return <HeroFour />;
       default:
         return (
           <div className="p-4 bg-slate-200 text-white">
@@ -33,6 +58,12 @@ const VersionLayout: React.FC = () => {
     switch (version) {
       case "1":
         return <CodexOne />;
+      case "2":
+        return <CodexTwo />;
+      case "3":
+        return <CodexThree />;
+      case "4":
+        return <CodexFour />;
       default:
         return <p>Component Comming Soon!!!</p>;
     }
@@ -42,6 +73,12 @@ const VersionLayout: React.FC = () => {
     switch (version) {
       case "1":
         return <InstallationOne />;
+      case "2":
+        return <InstallationTwo />;
+      case "3":
+        return <InstallationThree />;
+      case "4":
+        return <InstallationFour />;
       default:
         return <p>Component Comming soon!</p>;
     }

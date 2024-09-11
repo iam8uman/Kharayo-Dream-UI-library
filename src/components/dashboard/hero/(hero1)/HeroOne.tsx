@@ -2,6 +2,7 @@
 import { AlignJustify, BarChart, X } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export default function Example() {
 
@@ -40,9 +41,9 @@ export default function Example() {
             </a>
           </div>
           <div className="hidden lg:flex items-center justify-center gap-5 ">
-            <button className="px-5 py-2 text-white bg-fuchsia-500 rounded-lg hover:opacity-75 transition-all duration-300">
+            <Button className="px-5 py-2 text-white bg-fuchsia-500 rounded-lg hover:opacity-75 transition-all duration-300">
               Contact
-            </button>
+            </Button>
           </div>
           <AlignJustify
             size={24}
@@ -63,12 +64,12 @@ export default function Example() {
             confidence!
           </p>
           <div className="mt-10 h-12 flex items-center justify-start gap-3">
-            <button className="px-6 py-1.5 h-12 text-white bg-fuchsia-500 rounded-lg hover:opacity-75 transition-all duration-300">
+            <Button className="px-6 py-1.5 h-12 text-white bg-fuchsia-500 rounded-lg hover:opacity-75 transition-all duration-300">
               Explore now
-            </button>
-            <button className="px-3 py-1.5 text-white  rounded-lg hover:opacity-75 transition-all duration-300">
+            </Button>
+            <Button className="px-3 py-1.5 h-12 text-black  rounded-lg hover:opacity-75 transition-all duration-300">
               Learn more
-            </button>
+            </Button>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 mt-10 w-full h-auto gap-2 lg:divide-x-[1px] place-content-center">
             <div className="w-full h-20  px-5  flex lg:block items-center justify-center">
@@ -114,9 +115,9 @@ export default function Example() {
                 <p className="text-sm text-white">03ETH</p>
               </div>
             </div>
-            <button className="px-3 py-1.5 w-full text-lime-500 border border-lime-500 rounded-lg hover:opacity-75 transition-all duration-300">
+            <Button className="px-3 py-1.5 w-full text-lime-500 border border-lime-500 rounded-lg hover:opacity-75 transition-all duration-300">
               Place a bid
-            </button>
+            </Button>
           </div>
         </div>
       </section>
@@ -159,9 +160,9 @@ export const actualCodeString = `
             </a>
           </div>
           <div className="hidden lg:flex items-center justify-center gap-5 ">
-            <button className="px-5 py-2 text-white bg-fuchsia-500 rounded-lg hover:opacity-75 transition-all duration-300">
+            <Button className="px-5 py-2 text-white bg-fuchsia-500 rounded-lg hover:opacity-75 transition-all duration-300">
               Contact
-            </button>
+            </Button>
           </div>
           <AlignJustify
             size={24}
@@ -182,12 +183,12 @@ export const actualCodeString = `
             confidence!
           </p>
           <div className="mt-10 h-12 flex items-center justify-start gap-3">
-            <button className="px-6 py-1.5 h-12 text-white bg-fuchsia-500 rounded-lg hover:opacity-75 transition-all duration-300">
+            <Button className="px-6 py-1.5 h-12 text-white bg-fuchsia-500 rounded-lg hover:opacity-75 transition-all duration-300">
               Explore now
-            </button>
-            <button className="px-3 py-1.5 text-white  rounded-lg hover:opacity-75 transition-all duration-300">
+            </Button>
+            <Button className="px-3 py-1.5 text-white  rounded-lg hover:opacity-75 transition-all duration-300">
               Learn more
-            </button>
+            </Button>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 mt-10 w-full h-auto gap-2 lg:divide-x-[1px] place-content-center">
             <div className="w-full h-20  px-5  flex lg:block items-center justify-center">
@@ -233,9 +234,9 @@ export const actualCodeString = `
                 <p className="text-sm text-white">03ETH</p>
               </div>
             </div>
-            <button className="px-3 py-1.5 w-full text-lime-500 border border-lime-500 rounded-lg hover:opacity-75 transition-all duration-300">
+            <Button className="px-3 py-1.5 w-full text-lime-500 border border-lime-500 rounded-lg hover:opacity-75 transition-all duration-300">
               Place a bid
-            </button>
+            </Button>
           </div>
         </div>
       </section>
