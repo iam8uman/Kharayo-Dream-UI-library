@@ -24,6 +24,11 @@ import {
   HeroFour,
   InstallationFour,
 } from "@/components/dashboard/hero/(hero4)/main";
+import {
+  CodexFive,
+  HeroFive,
+  InstallationFive,
+} from "@/components/dashboard/hero/(hero5)/main";
 
 const VersionLayout: React.FC = () => {
   const version = useParams().version;
@@ -43,6 +48,8 @@ const VersionLayout: React.FC = () => {
         return <HeroThree />;
       case "4":
         return <HeroFour />;
+      case "5":
+        return <HeroFive />;
       default:
         return (
           <div className="p-4 bg-slate-200 text-white">
@@ -64,6 +71,8 @@ const VersionLayout: React.FC = () => {
         return <CodexThree />;
       case "4":
         return <CodexFour />;
+      case "5":
+        return <CodexFive />;
       default:
         return <p>Component Comming Soon!!!</p>;
     }
@@ -79,6 +88,8 @@ const VersionLayout: React.FC = () => {
         return <InstallationThree />;
       case "4":
         return <InstallationFour />;
+      case "5":
+        return <InstallationFive />;
       default:
         return <p>Component Comming soon!</p>;
     }
