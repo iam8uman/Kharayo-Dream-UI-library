@@ -32,18 +32,18 @@ export default function DashboardLayout({
 }) {
   return (
     <div className="min-h-screen w-full bg-slate-100 dark:bg-slate-900">
-      <header className="sr-only">
-        <h1>SUI Dashboard</h1>
-      </header>
-      <section>
-        <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[240px_1fr]">
-          <Sidebar />
-          <div className="flex flex-col">
-            <Topbar />
-            {children}
-          </div>
+    <header className="sr-only">
+      <h1>SUI Dashboard</h1>
+    </header>
+    <section>
+      <div className="flex min-h-screen w-full">
+        <Sidebar />
+        <div className="flex flex-col flex-1">
+          <Topbar />
+          {children}
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
+  </div>
   );
 }
