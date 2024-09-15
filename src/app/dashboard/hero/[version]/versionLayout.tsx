@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback, useMemo, memo } from "react";
 import { useParams } from "next/navigation";
 import componentData from "@/lib/componentData";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -30,7 +30,7 @@ import {
   InstallationFive,
 } from "@/components/dashboard/hero/(hero5)/main";
 
-const VersionLayout: React.FC = () => {
+const VersionLayout: React.FC = memo(() => {
   const version = useParams().version;
 
   useEffect(() => {
@@ -38,30 +38,33 @@ const VersionLayout: React.FC = () => {
     window.scrollTo(0, 0);
   }, [version]);
 
-  const renderNavbar = () => {
-    switch (version) {
-      case "1":
-        return <HeroOne />;
-      case "2":
-        return <HeroTwo />;
-      case "3":
-        return <HeroThree />;
-      case "4":
-        return <HeroFour />;
-      case "5":
-        return <HeroFive />;
-      default:
-        return (
-          <div className="p-4 bg-slate-200 text-white">
-            <p className="text-3xl bg-slate-900 p-4 rounded-md h-52 items-center justify-center flex text-sky-500">
-              Coming Soon...
-            </p>
-          </div>
-        );
-    }
-  };
+  const renderNavbar = useCallback(
+    function renderNavbar() {
+      switch (version) {
+        case "1":
+          return <HeroOne />;
+        case "2":
+          return <HeroTwo />;
+        case "3":
+          return <HeroThree />;
+        case "4":
+          return <HeroFour />;
+        case "5":
+          return <HeroFive />;
+        default:
+          return (
+            <div className="p-6 bg-slate-200 text-white">
+              <p className="text-3xl bg-slate-900 p-4 rounded-md h-52 items-center justify-center flex text-sky-500">
+                Coming Soon...
+              </p>
+            </div>
+          );
+      }
+    },
+    [version]
+  );
 
-  const renderPreview = () => {
+  const renderPreview = useCallback(() => {
     switch (version) {
       case "1":
         return <CodexOne />;
@@ -74,11 +77,11 @@ const VersionLayout: React.FC = () => {
       case "5":
         return <CodexFive />;
       default:
-        return <p>Component Comming Soon!!!</p>;
+        return <p>Component Coming Soon!!!</p>;
     }
-  };
+  }, [version]);
 
-  const renderInstallation = () => {
+  const renderInstallation = useCallback(() => {
     switch (version) {
       case "1":
         return <InstallationOne />;
@@ -91,15 +94,16 @@ const VersionLayout: React.FC = () => {
       case "5":
         return <InstallationFive />;
       default:
-        return <p>Component Comming soon!</p>;
+        return <p>Component Coming soon!</p>;
     }
-  };
+  }, [version]);
 
-  const componentInfo =
-    componentData.navbar[version as keyof typeof componentData.navbar];
+  const componentInfo = useMemo(() => {
+    return componentData.navbar[version as keyof typeof componentData.navbar];
+  }, [version]);
 
   return (
-    <div className="px-4 mt-6 w-full flex-1">
+    <div className="px-6 mt-6 w-full flex-1">
       <Tabs defaultValue="preview" className="w-full">
         <TabsList className="border-sky-600 border py-5 px-2">
           <TabsTrigger value="preview" className="py-1.5 px-3">
@@ -123,6 +127,8 @@ const VersionLayout: React.FC = () => {
       <div className="demo">{renderInstallation()}</div>
     </div>
   );
-};
+});
+
+VersionLayout.displayName = "VersionLayout";
 
 export default VersionLayout;

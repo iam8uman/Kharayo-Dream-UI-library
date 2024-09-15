@@ -6,7 +6,7 @@ import { Blockquote, BlockquoteAuthor } from "@/components/ui/backquote";
 
 const Page: React.FC = () => {
   return (
-    <div className="p-4">
+    <div className="p-6">
       <Blockquote className="bg-slate-900 dark:bg-slate-100 text-slate-50 dark:text-slate-900">
         Happiness lies not in the mere possession of money; it lies in the joy
         of achievement, in the thrill of creative effort.

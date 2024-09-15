@@ -3,7 +3,7 @@ import { Blockquote, BlockquoteAuthor } from "@/components/ui/backquote";
 
 const Page = () => {
   return (
-    <div className="px-4">
+    <div className="px-6">
       <Blockquote className="my-10">
         Happiness lies not in the mere possession of money; it lies in the joy
         of achievement, in the thrill of creative effort.

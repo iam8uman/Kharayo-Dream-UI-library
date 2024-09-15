@@ -29,7 +29,7 @@ const PreLayout: React.FC = () => {
   const currentPath = usePathname();
 
   return (
-    <div className="p-4 flex-1">
+    <div className="p-6 flex-1">
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
