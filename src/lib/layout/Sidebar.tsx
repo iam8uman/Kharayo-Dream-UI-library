@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Bell, Package2 } from "lucide-react";
+import { Bell, Package2, X, XIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -42,7 +42,11 @@ export default function Sidebar() {
             className="ml-auto h-8 w-8 p-2"
             onClick={() => setIsCollapsed(!isCollapsed)}
           >
-            <HamburgerMenuIcon className="h-4 w-4" />
+            {isCollapsed ? (
+              <HamburgerMenuIcon className="h-4 w-4" />
+            ) : (
+              <XIcon className="h-4 w-4" />
+            )}
             <span className="sr-only">Toggle sidebar</span>
           </Button>
         </div>
@@ -81,7 +85,6 @@ export default function Sidebar() {
           </ScrollArea>
         </div>
 
-        
         {!isCollapsed && (
           <div className="mt-auto p-1 justify-center items-center flex">
             <Card className="w-full justify-center items-center border-sky-500 flex-1">

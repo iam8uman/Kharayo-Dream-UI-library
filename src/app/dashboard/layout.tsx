@@ -36,7 +36,7 @@ export default function DashboardLayout({
       <h1>SUI Dashboard</h1>
     </header>
     <section>
-      <div className="flex min-h-screen w-full">
+      <div className="flex min-h-screen h-full w-full">
         <Sidebar />
         <div className="flex flex-col flex-1">
           <Topbar />

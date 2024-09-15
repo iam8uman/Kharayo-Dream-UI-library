@@ -22,6 +22,7 @@ import {
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import CommandComponent from "@/components/dashboard/command";
 import { TopbarClient } from "./TopbarClient";
+import { navMenu } from "@/data/navMenu";
 
 // Configuration
 const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || "Acme Inc";
@@ -55,7 +56,7 @@ export default async function Topbar() {
 
   return (
     <header className="flex h-14 items-center gap-4 sticky top-0 border-b border-sky-500  dark:border-slate-800 bg-slate-300 dark:bg-slate-900 px-4 lg:h-[60px] lg:px-6 z-50">
-      <Sheet>
+      {/* <Sheet>
         <SheetTrigger asChild>
           <Button variant="outline" size="icon" className="shrink-0 md:hidden">
             <Menu className="h-5 w-5" />
@@ -71,7 +72,7 @@ export default async function Topbar() {
               <Package2 className="h-6 w-6" />
               <span className="sr-only">{APP_NAME}</span>
             </Link>
-            {navItems.map((item, index) => (
+            {navMenu.map((item, index) => (
               <Link
                 key={index}
                 href={item.href}
@@ -103,7 +104,7 @@ export default async function Topbar() {
             </div>
           )}
         </SheetContent>
-      </Sheet>
+      </Sheet> */}
       <div className="w-full flex-1">
         <CommandComponent />
       </div>
