@@ -1,26 +1,10 @@
 "use client";
 
-import { useEffect, useCallback, useMemo, memo } from "react";
+import React, { useEffect, useCallback, useMemo, memo } from "react";
 import { useParams } from "next/navigation";
 import componentData from "@/lib/componentData";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  CodexFive,
-  CodexFour,
-  CodexOne,
-  CodexThree,
-  CodexTwo,
-  InstallationFive,
-  InstallationFour,
-  InstallationOne,
-  InstallationThree,
-  InstallationTwo,
-  NavbarFive,
-  NavbarFour,
-  NavbarOne,
-  NavbarThree,
-  NavbarTwo,
-} from "@/components/dashboard/navbar";
+import { CodexOnePricing, InstallationOnePricing, PricingOne } from "@/components/dashboard/pricing";
 
 const VersionLayout: React.FC = memo(() => {
   const version = useParams().version;
@@ -34,15 +18,8 @@ const VersionLayout: React.FC = memo(() => {
     function renderNavbar() {
       switch (version) {
         case "1":
-          return <NavbarOne />;
-        case "2":
-          return <NavbarTwo />;
-        case "3":
-          return <NavbarThree />;
-        case "4":
-          return <NavbarFour />;
-        case "5":
-          return <NavbarFive />;
+          return <PricingOne />;
+
         default:
           return (
             <div className="p-6 bg-slate-200 text-white">
@@ -56,45 +33,23 @@ const VersionLayout: React.FC = memo(() => {
     [version]
   );
 
-  const renderPreview = useCallback(
-    function renderPreview() {
-      switch (version) {
-        case "1":
-          return <CodexOne />;
-        case "2":
-          return <CodexTwo />;
-        case "3":
-          return <CodexThree />;
-        case "4":
-          return <CodexFour />;
-        case "5":
-          return <CodexFive />;
-        default:
-          return <p>Component Coming Soon!!!</p>;
-      }
-    },
-    [version]
-  );
+  const renderPreview = useCallback(() => {
+    switch (version) {
+      case "1":
+        return <CodexOnePricing />;
+      default:
+        return <p>Component Coming Soon!!!</p>;
+    }
+  }, [version]);
 
-  const renderInstallation = useCallback(
-    function renderInstallation() {
-      switch (version) {
-        case "1":
-          return <InstallationOne />;
-        case "2":
-          return <InstallationTwo />;
-        case "3":
-          return <InstallationThree />;
-        case "4":
-          return <InstallationFour />;
-        case "5":
-          return <InstallationFive />;
-        default:
-          return <p>Component Coming soon!</p>;
-      }
-    },
-    [version]
-  );
+  const renderInstallation = useCallback(() => {
+    switch (version) {
+      case "1":
+        return <InstallationOnePricing />;
+      default:
+        return <p>Component Coming soon!</p>;
+    }
+  }, [version]);
 
   const componentInfo = useMemo(() => {
     return componentData.navbar[version as keyof typeof componentData.navbar];

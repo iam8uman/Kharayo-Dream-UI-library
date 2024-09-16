@@ -1,6 +1,6 @@
 // navMenu.ts
 import { IconArrowRoundaboutLeft } from "@tabler/icons-react";
-import { Home, ShoppingCart, Package, Users, LineChart, HeartOff, Contact2Icon } from "lucide-react";
+import { Home, ShoppingCart, Package, Users, LineChart, HeartOff, Contact2Icon,IndianRupee } from "lucide-react";
 
 export const navMenu = [
   {
@@ -18,6 +18,11 @@ export const navMenu = [
     href: "/dashboard/hero",
     label: "Hero",
     icon: HeartOff,
+  },
+  {
+    href: "/dashboard/pricing",
+    label: "Pricing",
+    icon: IndianRupee,
   },
   {
     href: "/dashboard/about",

@@ -5,35 +5,25 @@ import { useParams } from "next/navigation";
 import componentData from "@/lib/componentData";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
-  CodexOne,
-  HeroOne,
-  InstallationOne,
-} from "@/components/dashboard/hero/(hero1)/main";
-import { HeroTwo } from "@/components/dashboard/hero";
-import {
-  CodexTwo,
-  InstallationTwo,
-} from "@/components/dashboard/hero/(hero2)/main";
-import {
-  CodexThree,
-  HeroThree,
-  InstallationThree,
-} from "@/components/dashboard/hero/(hero3)/main";
-import {
-  CodexFour,
-  HeroFour,
-  InstallationFour,
-} from "@/components/dashboard/hero/(hero4)/main";
-import {
   CodexFive,
-  HeroFive,
-  InstallationFive,
-} from "@/components/dashboard/hero/(hero5)/main";
-import {
+  CodexFour,
+  CodexOne,
   CodexSix,
+  CodexThree,
+  CodexTwo,
+  HeroFive,
+  HeroFour,
+  HeroOne,
   HeroSix,
+  HeroThree,
+  HeroTwo,
+  InstallationFive,
+  InstallationFour,
+  InstallationOne,
   InstallationSix,
-} from "@/components/dashboard/hero/(hero6)/main";
+  InstallationThree,
+  InstallationTwo,
+} from "@/components/dashboard/hero";
 
 const VersionLayout: React.FC = memo(() => {
   const version = useParams().version;
