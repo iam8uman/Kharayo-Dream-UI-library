@@ -33,6 +33,7 @@
     "react-element-to-jsx-string": "^15.0.0",
     "react-syntax-highlighter": "^15.5.0",
     "sonner": "^1.5.0",
+    "sumanifest": "^2.0.1",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7"
   },

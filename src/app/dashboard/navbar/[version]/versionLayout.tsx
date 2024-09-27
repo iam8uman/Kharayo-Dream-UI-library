@@ -8,16 +8,19 @@ import {
   CodexFive,
   CodexFour,
   CodexOne,
+  CodexSix,
   CodexThree,
   CodexTwo,
   InstallationFive,
   InstallationFour,
   InstallationOne,
+  InstallationSix,
   InstallationThree,
   InstallationTwo,
   NavbarFive,
   NavbarFour,
   NavbarOne,
+  NavbarSix,
   NavbarThree,
   NavbarTwo,
 } from "@/components/dashboard/navbar";
@@ -43,6 +46,8 @@ const VersionLayout: React.FC = memo(() => {
           return <NavbarFour />;
         case "5":
           return <NavbarFive />;
+          case "6":
+            return <NavbarSix />;
         default:
           return (
             <div className="p-6 bg-slate-200 text-white">
@@ -69,6 +74,8 @@ const VersionLayout: React.FC = memo(() => {
           return <CodexFour />;
         case "5":
           return <CodexFive />;
+          case "6":
+            return <CodexSix />;
         default:
           return <p>Component Coming Soon!!!</p>;
       }
@@ -89,6 +96,8 @@ const VersionLayout: React.FC = memo(() => {
           return <InstallationFour />;
         case "5":
           return <InstallationFive />;
+          case "6":
+            return <InstallationSix />;
         default:
           return <p>Component Coming soon!</p>;
       }
