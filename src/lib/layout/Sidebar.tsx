@@ -29,11 +29,11 @@ export default function Sidebar() {
       } transition-all duration-300`}
     >
       <div className="flex h-full max-h-screen flex-col">
-        <div className="flex h-14 items-center border-b border-sky-500 px-4 lg:h-[60px]">
+        <div className="flex h-14 items-center border-b border-sky-800 px-4 lg:h-[60px]">
           <Link href="/" className="flex items-center font-semibold">
             {/* <Package2 className="h-6 w-6" /> */}
             <span className={`${isCollapsed ? "hidden" : "block"}`}>
-              WSC SUI
+            <span className="text-sky-500 font-black">SUI</span> 🌟 The Dream UI
             </span>
           </Link>
           <Button

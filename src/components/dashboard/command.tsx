@@ -43,7 +43,7 @@ export default function CommandComponent() {
           <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
           <Input
             type="search"
-            placeholder="Press ⌘ + k to search..."
+            placeholder="Press ⌘ + k to search...............🕉️"
             className="rounded-full ring-transparent focus:border-none appearance-none bg-transparent pl-8 shadow-none w-full placeholder:text-slate-500 focus:ring-transparent"
           />
         </div>
