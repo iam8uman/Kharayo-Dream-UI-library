@@ -1,6 +1,5 @@
 import React from "react";
 import Head from "next/head";
-import PreLayout from "./pre-layout";
 import { Metadata } from "next";
 
 interface DashboardLayoutProps {
@@ -81,7 +80,6 @@ export default function NavbarLayout({
       </Head>
       <section className="min-h-screen flex flex-col">
         <main className="flex-grow">
-          <PreLayout />
           {children}
         </main>
         <footer>{/* Add your footer content here */}</footer>

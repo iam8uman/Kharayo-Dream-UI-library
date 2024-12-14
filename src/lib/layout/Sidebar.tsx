@@ -32,8 +32,8 @@ export default function Sidebar() {
         <div className="flex h-14 items-center border-b border-sky-800 px-4 lg:h-[60px]">
           <Link href="/" className="flex items-center font-semibold">
             {/* <Package2 className="h-6 w-6" /> */}
-            <span className={`${isCollapsed ? "hidden" : "block"}`}>
-            <span className="text-sky-500 font-black">SUI</span> 🌟 The Dream UI
+            <span className={`${isCollapsed ? "hidden" : "block"} text-sky-500 text-2xl font-semibold`}>
+            <span>Kharayo</span>🌟
             </span>
           </Link>
           <Button

@@ -19,14 +19,14 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ code }) => {
   const handleCopy = () => {
     navigator.clipboard.writeText(code).then(() => {
       setIsCopied(true);
-      setTimeout(() => setIsCopied(false), 2000); // Reset after 2 seconds
+      setTimeout(() => setIsCopied(false), 3000); // Reset after 2 seconds
     });
   };
 
   return (
-    <div className="bg-gray-900 rounded-md">
+    <div className="bg-gray-900 rounded-md p-4 sm:p-6">
       <button
-        className={`mt-4 text-black rounded-none flex flex-row items-center px-2 py-1 border border-black justify-end text-end ${
+        className={`text-black rounded-none flex flex-row items-center px-2 py-1 border border-black justify-end text-end ${
           isCopied ? "bg-white text-black" : "bg-sky-500 text-white"
         }`}
         onClick={handleCopy}
@@ -38,7 +38,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ code }) => {
         )}
         {isCopied ? "Copied!" : "Copy"}
       </button>
-      <div className="overflow-x-auto overflow-y-auto max-h-96 w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-[68rem] p-4 sm:p-6">
+      <div className="overflow-x-auto overflow-y-auto max-h-96 w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-[60rem]">
         <SyntaxHighlighter language="tsx" style={nightOwl}>
           {code}
         </SyntaxHighlighter>

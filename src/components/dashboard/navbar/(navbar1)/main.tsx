@@ -16,7 +16,7 @@ function NavbarOne() {
 
 const CodexOne = () => {
   return (
-    <div className="dark:bg-slate-200 bg-slate-900 p-8  overflow-x-auto overflow-hidden">
+    <div className="dark:bg-slate-200 bg-slate-900 p-6  overflow-x-auto overflow-hidden">
       <CodeBlock code={`${actualCodeString}`} />
     </div>
   );
