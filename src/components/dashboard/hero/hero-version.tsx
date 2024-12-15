@@ -28,12 +28,12 @@ import { CodexSeven, HeroSeven, InstallationSeven } from "./(hero7)/main";
 
 export const HeroVersions = [
   { id: "1", component: HeroSeven, codex: CodexSeven, installation: InstallationSeven, label: "one" },
-  { id: "2", component: HeroTwo, codex: CodexTwo, installation: InstallationTwo, label: "Two" },
-  { id: "3", component: HeroThree, codex: CodexThree, installation: InstallationThree, label: "Three" },
-  { id: "4", component: HeroFour, codex: CodexFour, installation: InstallationFour, label: "Four" },
-  { id: "5", component: HeroFive, codex: CodexFive, installation: InstallationFive, label: "Five" },
-  { id: "6", component: HeroSix, codex: CodexSix, installation: InstallationSix, label: "Six" },
-  { id: "7", component: HeroOne, codex: CodexOne, installation: InstallationOne, label: "Seven" },
+  { id: "2", component: HeroThree, codex: CodexThree, installation: InstallationThree, label: "Two" },
+  { id: "3", component: HeroFour, codex: CodexFour, installation: InstallationFour, label: "Three" },
+  { id: "4", component: HeroFive, codex: CodexFive, installation: InstallationFive, label: "Four" },
+  { id: "5", component: HeroSix, codex: CodexSix, installation: InstallationSix, label: "Five" },
+  { id: "6", component: HeroOne, codex: CodexOne, installation: InstallationOne, label: "Six" },
+  { id: "7", component: HeroTwo, codex: CodexTwo, installation: InstallationTwo, label: "Seven" },
 ]
 
 const HeroVersionsPage: React.FC = () => {
