@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import GitHubButton from "./shared/GithubButton";
 
@@ -27,10 +26,10 @@ const Footer = () => {
                 height={40}
                 width={40}
                 className="w-10 h-10 mx-2 lg:mx-0"
-                src="/Kharayo.png"
+                src="/SUI.png"
                 alt=""
               />
-              <p>Kharayo - Dream UI</p>
+              <p>Kharayo - UI</p>
             </div>
 
             <ul className="flex items-center justify-center mt-8 space-x-6 sm:mt-12 sm:space-x-16 lg:mt-0">

@@ -24,14 +24,16 @@ import {
   InstallationSix,
 } from "@/components/dashboard/hero"
 import VersionLayout from "./version-layout";
+import { CodexSeven, HeroSeven, InstallationSeven } from "./(hero7)/main";
 
 export const HeroVersions = [
-  { id: "1", component: HeroOne, codex: CodexOne, installation: InstallationOne, label: "One" },
+  { id: "1", component: HeroSeven, codex: CodexSeven, installation: InstallationSeven, label: "one" },
   { id: "2", component: HeroTwo, codex: CodexTwo, installation: InstallationTwo, label: "Two" },
   { id: "3", component: HeroThree, codex: CodexThree, installation: InstallationThree, label: "Three" },
   { id: "4", component: HeroFour, codex: CodexFour, installation: InstallationFour, label: "Four" },
   { id: "5", component: HeroFive, codex: CodexFive, installation: InstallationFive, label: "Five" },
   { id: "6", component: HeroSix, codex: CodexSix, installation: InstallationSix, label: "Six" },
+  { id: "7", component: HeroOne, codex: CodexOne, installation: InstallationOne, label: "Seven" },
 ]
 
 const HeroVersionsPage: React.FC = () => {
