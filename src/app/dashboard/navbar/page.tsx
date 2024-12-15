@@ -9,6 +9,7 @@ import {
   BreadcrumbList,
 } from "@/components/ui/breadcrumb";
 import { Separator } from "@/components/ui/separator";
+import { Blockquote } from "@/components/ui/backquote";
 
 const Page: React.FC = () => {
   return (
@@ -36,8 +37,13 @@ const Page: React.FC = () => {
         </div>
       </div>
       <Separator className="bg-gradient-to-r from-indigo-500 to-sky-500 my-6" />
-
       <OptimizedNavbar />
+      <Blockquote className="bg-slate-900  text-slate-50 border-slate-100 border my-6">
+        Hero today, legend tomorrow!
+        <div className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-sky-500  text-end">
+          CEO @whysumancode.com
+        </div>
+      </Blockquote>
     </div>
   );
 };

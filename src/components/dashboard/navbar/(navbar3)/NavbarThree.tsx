@@ -1,8 +1,6 @@
-"use client";
-
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import { ModeToggle } from "@/components/ui/dark-mode";
 import Link from "next/link";
@@ -16,7 +14,7 @@ const Example =  () => {
             <Image
               height={400}
               width={400}
-              src="/Kharayo.png"
+              src="/SUI.png"
               className="rounded-3xl border w-10 h-10 border-none  shadow-lg"
               alt="Company Logo"
             />
