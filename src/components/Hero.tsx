@@ -1,4 +1,5 @@
 import {
+  ArrowRight,
   CheckCircle,
   ChefHat,
   Layers,
@@ -10,17 +11,28 @@ import React from "react";
 import { LoginLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import Link from "next/link";
+import Image from "next/image";
 
 const Hero = async () => {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
   return (
-    <div>
+    <div className="h-screen">
       <section className="relative h-auto w-full flex flex-col items-center pt-32 bg-slate-200 dark:bg-slate-950">
         <div className="absolute h-[20%] w-[20%] top-[20%] left-[50%] -translate-x-1/2 bg-sky-500 rounded-full blur-[110px]"></div>
-        <h1 className="w-full text-3xl md:text-4xl lg:text-7xl max-w-2xl text-slate-950 dark:text-slate-100 font-bold text-center">
-          KHARAYO🐰UI
-        </h1>
+        <div className="w-full flex flex-row justify-center items-center  text-3xl md:text-4xl lg:text-7xl max-w-2xl text-slate-950 dark:text-slate-100 font-bold text-center">
+          <span className=" logo px-2 group slide-anime cursor-pointer ">
+            <Image
+              height={400}
+              width={400}
+              src="/SUI.png"
+              className="rounded-3xl border w-20 h-20 scale-110 border-none  shadow-lg"
+              alt="Company Logo"
+            />
+            <span className="sr-only">Company Logo</span>
+          </span>
+          <h1>KHARAYO</h1>
+        </div>
         <h1 className="w-full text-3xl md:text-4xl lg:text-7xl max-w-3xl text-slate-950 dark:text-slate-100 font-bold text-center mt-3">
           Your Dream UI <span className="text-sky-500">Library!</span>
         </h1>
@@ -64,33 +76,22 @@ const Hero = async () => {
             </div>
           </div>
         </div>
-        {user ? (
-          <LoginLink className="flex flex-row gap-2">
-            <button className="relative py-3 px-5 rounded-full text-slate-950 dark:text-slate-100 mt-6 hover:bg-sky-600 transition flex flex-row gap-2 overflow-hidden">
-              <span className="relative z-10">
-                <UserCheck2 className="h-5 w-5 inline-block" />
-                Get Started →
+        <Link href="/dashboard" className="flex flex-row gap-2">
+          <button className="relative py-3 px-5 rounded-full text-slate-950 dark:text-slate-100 mt-6 hover:bg-sky-600 transition flex flex-row gap-2 overflow-hidden">
+            <div className="relative z-10 flex flex-row group cursor-pointer">
+              Get Started
+              <span className="group-hover:translate-x-2 transition-all">
+                <ArrowRight />
               </span>
-              <span className="absolute inset-0 bg-gradient-to-r from-sky-400 to-purple-500 animate-gradient-x"></span>
-              <span className="absolute inset-[2px] bg-white dark:bg-slate-900 rounded-full"></span>
-            </button>
-          </LoginLink>
-        ) : (
-          <Link href={"/dashboard"}>
-            <button className="relative py-3 px-5 rounded-full text-slate-950 dark:text-slate-100 mt-6 hover:bg-sky-600 transition flex flex-row gap-2 overflow-hidden">
-              <span className="relative z-10">
-                {/* <UserCheck2 className="h-5 w-5 inline-block" /> */}
-                Get Started →
-              </span>
-              <span className="absolute inset-0 bg-gradient-to-r from-sky-400 to-purple-500 animate-gradient-x"></span>
-              <span className="absolute inset-[2px] bg-white dark:bg-slate-900 rounded-full"></span>
-            </button>
-          </Link>
-        )}
+            </div>
+            <span className="absolute inset-0 bg-gradient-to-r from-sky-400 to-purple-500 animate-gradient-x"></span>
+            <span className="absolute inset-[2px] bg-white dark:bg-slate-900 rounded-full"></span>
+          </button>
+        </Link>
 
         <div className="flex items-center justify-center gap-5 uppercase text-slate-950 dark:text-slate-100 text-sm lg:text-xl font-semibold mt-24">
           <div className="w-6 lg:w-12 h-0.5 lg:h-1.5 rounded-full bg-sky-500"></div>
-          trusted by{" "}
+          Featured in{" "}
           <span className="bg-sky-500 px-2 text-slate-950 dark:text-slate-100">
             amazing
           </span>{" "}
