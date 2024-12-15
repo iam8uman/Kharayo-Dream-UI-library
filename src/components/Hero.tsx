@@ -88,7 +88,7 @@ const Hero = async () => {
           </Link>
         )}
 
-        <div className="flex items-center justify-center gap-5 uppercase text-slate-950 dark:text-slate-100 text-sm lg:text-xl font-semibold mt-10">
+        <div className="flex items-center justify-center gap-5 uppercase text-slate-950 dark:text-slate-100 text-sm lg:text-xl font-semibold mt-24">
           <div className="w-6 lg:w-12 h-0.5 lg:h-1.5 rounded-full bg-sky-500"></div>
           trusted by{" "}
           <span className="bg-sky-500 px-2 text-slate-950 dark:text-slate-100">

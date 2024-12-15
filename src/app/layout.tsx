@@ -23,15 +23,15 @@ export const metadata: Metadata = {
     description:
       "Create stunning web interfaces with Kharayo - combining Next.js, Tailwind CSS, and Framer Motion for powerful, responsive designs.",
     type: "website",
-    url: "https://Kharayo.whysumancode.com",
-    images: "https://Kharayo.whysumancode.com/og-image.png",
+    url: "https://ui.whysumancode.com",
+    images: "https://ui.whysumancode.com/og-image.png",
   },
   twitter: {
     card: "summary_large_image",
     title: "Kharayo | Next.js UI Library",
     description:
       "Elevate your web development with Kharayo - a modern UI library for Next.js and Tailwind CSS.",
-    images: "https://Kharayo.whysumancode.com/twitter-image.jpeg",
+    images: "https://ui.whysumancode.com/twitter-image.jpeg",
   },
 };
 
@@ -43,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="canonical" href="https://Kharayo.whysumancode.com" />
+        <link rel="canonical" href="https://ui.whysumancode.com" />
       </head>
       <body
         className={`${ubuntu.className} bg-slate-200 dark:bg-slate-950 text-foreground`}
