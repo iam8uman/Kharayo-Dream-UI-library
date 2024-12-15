@@ -7,7 +7,9 @@ const Footer = () => {
     <div>
       <section className="px-16">
         <figure className="relative h-[40vh] ">
-          <img
+          <Image
+            height={100}
+            width={100}
             src="https://images.unsplash.com/photo-1433838552652-f9a46b332c40?q=80&w=2070&auto=format&fit=crop"
             alt=""
             className="w-full h-full object-cover ml-4  aspect-square"

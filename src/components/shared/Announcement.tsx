@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React, { useState, useEffect, useRef } from "react";
 
 const useCountUp = (end: number, duration: number = 2000) => {
@@ -79,7 +80,9 @@ const Announcement = () => {
   return (
     <div>
       <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32 h-screen ">
-        <img
+        <Image
+          height={100}
+          width={100}
           src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply"
           alt=""
           className="absolute inset-0 -z-10 size-full object-cover object-right md:object-center"
@@ -123,35 +126,35 @@ const Announcement = () => {
           <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 text-base/7 font-semibold text-white sm:grid-cols-2 md:flex lg:gap-x-10">
               <a href="#">
-                Open roles <span aria-hidden="true">&rarr;</span>
+                Open Dashboard <span aria-hidden="true">&rarr;</span>
               </a>
               <a href="#">
-                Internship program <span aria-hidden="true">&rarr;</span>
+                Search Components <span aria-hidden="true">&rarr;</span>
               </a>
               <a href="#">
-                Our values <span aria-hidden="true">&rarr;</span>
+                Copy Codebase <span aria-hidden="true">&rarr;</span>
               </a>
               <a href="#">
-                Meet our leadership <span aria-hidden="true">&rarr;</span>
+                Paste it. <span aria-hidden="true">&rarr;</span>
               </a>
             </div>
             <dl className="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
               <div className="flex flex-col-reverse gap-1">
-                <dt className="text-base/7 text-gray-300">Offices worldwide</dt>
+                <dt className="text-base/7 text-gray-300">Unique Components</dt>
                 <dd className="text-4xl font-semibold tracking-tight text-white">
                   <AnimatedNumber end={12} duration={2000} />
                 </dd>
               </div>
               <div className="flex flex-col-reverse gap-1">
                 <dt className="text-base/7 text-gray-300">
-                  Full-time colleagues
+                  Total Codeblocks
                 </dt>
                 <dd className="text-4xl font-semibold tracking-tight text-white">
                   <AnimatedNumber end={300} duration={2000} /> {"+"}
                 </dd>
               </div>
               <div className="flex flex-col-reverse gap-1">
-                <dt className="text-base/7 text-gray-300">Hours per week</dt>
+                <dt className="text-base/7 text-gray-300">Hours Save</dt>
                 <dd className="text-4xl font-semibold tracking-tight text-white">
                   <AnimatedNumber end={40} duration={2000} />
                 </dd>
