@@ -6,36 +6,16 @@ import { Badge } from "@/components/ui/badge"
 import VersionLayout from "./version-layout"
 
 import {
-  NavbarOne,
-  NavbarTwo,
-  NavbarThree,
-  NavbarFour,
-  NavbarFive,
-  NavbarSix,
-  CodexOne,
-  CodexTwo,
-  CodexThree,
-  CodexFour,
-  CodexFive,
-  CodexSix,
-  InstallationOne,
-  InstallationTwo,
-  InstallationThree,
-  InstallationFour,
-  InstallationFive,
-  InstallationSix,
-} from "@/components/dashboard/navbar"
+  PricingOne,
+  CodexOnePricing,
+  InstallationOnePricing,
+} from "@/components/dashboard/pricing"
 
 export const NavbarVersions = [
-  { id: "1", component: NavbarOne, codex: CodexOne, installation: InstallationOne, label: "One" },
-  { id: "2", component: NavbarTwo, codex: CodexTwo, installation: InstallationTwo, label: "Two" },
-  { id: "3", component: NavbarThree, codex: CodexThree, installation: InstallationThree, label: "Three" },
-  { id: "4", component: NavbarFour, codex: CodexFour, installation: InstallationFour, label: "Four" },
-  { id: "5", component: NavbarFive, codex: CodexFive, installation: InstallationFive, label: "Five" },
-  { id: "6", component: NavbarSix, codex: CodexSix, installation: InstallationSix, label: "Six" },
+  { id: "1", component: PricingOne, codex: CodexOnePricing, installation: InstallationOnePricing, label: "One" }
 ]
 
-const NavbarVersionsPage: React.FC = () => {
+const PricingVersionsPage: React.FC = () => {
   return (
     <Tabs defaultValue="1" className="w-full">
       <TabsList className="flex flex-wrap gap-2">
@@ -58,5 +38,5 @@ const NavbarVersionsPage: React.FC = () => {
   )
 }
 
-export default NavbarVersionsPage
+export default PricingVersionsPage
 

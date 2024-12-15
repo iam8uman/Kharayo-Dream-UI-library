@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import { ModeToggle } from "./ui/dark-mode";
 import {
@@ -6,13 +6,12 @@ import {
   LoginLink,
   RegisterLink,
 } from "@kinde-oss/kinde-auth-nextjs/server";
-import { LogIn, LogInIcon } from "lucide-react";
 
 const Navbar = async () => {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
   return (
-    <div className="flex items-end justify-end">
+    <div className="flex items-center justify-center z-50">
       <div className="container flex  border-none justify-center z-20 fixed top-2  ">
         <nav className="shadow-lg flex items-center justify-between gap-20 lg:gap-3 px-3 lg:py-0 bg-slate-200 dark:bg-slate-950 border border-slate-500 font-semibold text-sky-500 rounded-full">
           <div className=" logo px-2 cursor-pointer ">

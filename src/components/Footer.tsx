@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import GitHubButton from "./shared/GithubButton";
 
 const Footer = () => {
   return (
@@ -16,19 +17,7 @@ const Footer = () => {
                     "linear-gradient(90deg, #44ff9a -0.55%, #44b0ff 22.86%, #8b44ff 48.36%, #ff6644 73.33%, #ebff70 99.34%)",
                 }}
               ></div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-sky-500 flex items-center justify-center gap-2 ">
-                <div className="w-6 lg:w-12 h-0.5 lg:h-1.5 rounded-full bg-sky-500"></div>
-                <a
-                  href="/dashboard"
-                  title=""
-                  className="relative inline-flex items-center justify-center px-14 py-4 text-lg font-bold text-white transition-all duration-200 bg-gray-900 font-pj rounded-full  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
-                  role="button"
-                >
-                  {" "}
-                  Get SUI{" "}
-                </a>
-                <div className="w-6 lg:w-12 h-0.5 lg:h-1.5 rounded-full bg-sky-500"></div>
-              </h2>
+              <GitHubButton />
             </div>
           </div>
 
@@ -38,10 +27,10 @@ const Footer = () => {
                 height={40}
                 width={40}
                 className="w-10 h-10 mx-2 lg:mx-0"
-                src="/SUI.png"
+                src="/Kharayo.png"
                 alt=""
               />
-              <p>SUI - Dream UI</p>
+              <p>Kharayo - Dream UI</p>
             </div>
 
             <ul className="flex items-center justify-center mt-8 space-x-6 sm:mt-12 sm:space-x-16 lg:mt-0">

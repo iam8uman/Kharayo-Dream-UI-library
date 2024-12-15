@@ -4,11 +4,11 @@ import React, { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { NavbarVersions } from "./navbar-version";
+import { NavbarVersions } from "./pricing-version";
 import componentData from "@/lib/componentData";
 
 
-const OptimizedNavbar: React.FC = () => {
+const OptimizedPricing: React.FC = () => {
   const [activeVersion, setActiveVersion] = useState("1");
 
   return (
@@ -74,4 +74,4 @@ const OptimizedNavbar: React.FC = () => {
   );
 };
 
-export default OptimizedNavbar;
+export default OptimizedPricing;

@@ -15,12 +15,14 @@ import {
 import { Input } from "../ui/input";
 import { navMenu } from "@/data/navMenu";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function CommandComponent() {
   const [open, setOpen] = React.useState(false);
   const itemRefs = React.useRef(
     navMenu.map(() => React.createRef<HTMLDivElement>())
   );
+  const router = useRouter()
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -36,15 +38,24 @@ export default function CommandComponent() {
 
   return (
     <>
-      <div className="relative rounded-full max-w-xs">
-        <div className="absolute inset-0 bg-gradient-to-r from-sky-400 to-purple-500 animate-gradient-x rounded-full"></div>
-        <div className="absolute inset-[2px] bg-white dark:bg-slate-900 rounded-full"></div>
-        <div className="relative">
+      <div className="relative rounded-md w-96">
+        <div className="absolute inset-0 bg-gradient-to-r from-sky-400 to-purple-500 animate-gradient-x rounded-md"></div>
+        <div className="absolute inset-[2px] bg-white dark:bg-slate-900 rounded-md"></div>
+        <div className="relative w-full">
           <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
           <Input
             type="search"
             placeholder="Press ⌘ + k to search"
-            className="rounded-full ring-transparent focus:border-none focus:outline-none appearance-none bg-transparent pl-8 shadow-none w-full placeholder:text-slate-500 focus:ring-transparent "
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                const firstResult = navMenu[0];
+                if (firstResult) {
+                  router.push(firstResult.href);
+                  setOpen(false);
+                }
+              }
+            }}
+            className="rounded-md ring-transparent focus:border-none focus:outline-none appearance-none bg-transparent pl-8 shadow-none w-full placeholder:text-slate-500 focus:ring-transparent "
           />
         </div>
       </div>
@@ -64,7 +75,7 @@ export default function CommandComponent() {
                     <item.icon className="mr-2 h-4 w-4" />
                     <span>{item.label}</span>
                     {item.badge && (
-                      <span className="ml-auto bg-red-500 text-white rounded-full px-2 py-0.5 text-xs">
+                      <span className="ml-auto bg-red-500 text-white rounded-md px-2 py-0.5 text-xs">
                         {item.badge}
                       </span>
                     )}

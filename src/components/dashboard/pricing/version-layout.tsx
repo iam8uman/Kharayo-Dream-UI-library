@@ -4,36 +4,18 @@ import React, { useCallback, useMemo } from "react"
 import { useParams } from "next/navigation"
 import componentData from "@/lib/componentData"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { CodexOne, InstallationOne } from "./(navbar1)/main"
-import { NavbarOne } from "./(navbar1)/main"
-import { CodexTwo } from "./(navbar2)/Main"
-import { CodexSix, CodexFive, CodexThree, HeroFive, HeroFour, HeroThree, HeroTwo, InstallationFour, HeroSix, InstallationThree, InstallationFive, CodexFour, InstallationTwo, InstallationSix } from "../hero"
+import { CodexOnePricing, InstallationOnePricing, PricingOne } from "./(pricing1)/main"
 
 const navbarComponents = {
-  "1": NavbarOne  ,
-  "2": HeroTwo,
-  "3": HeroThree,
-  "4": HeroFour,
-  "5": HeroFive,
-  "6": HeroSix,
+  "1": PricingOne
 }
 
 const codexComponents = {
-  "1": CodexOne,
-  "2": CodexTwo,
-  "3": CodexThree,
-  "4": CodexFour,
-  "5": CodexFive,
-  "6": CodexSix,
+  "1": CodexOnePricing,
 }
 
 const installationComponents = {
-  "1": InstallationOne,
-  "2": InstallationTwo,
-  "3": InstallationThree ,
-  "4": InstallationFour,
-  "5": InstallationFive,
-  "6": InstallationSix,
+  "1": InstallationOnePricing
 }
 
 const VersionLayout: React.FC = () => {

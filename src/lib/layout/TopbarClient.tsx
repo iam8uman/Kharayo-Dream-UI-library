@@ -10,11 +10,13 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
-import { CircleUser } from "lucide-react";
+import { CircleUser, User2 } from "lucide-react";
 import Image from "next/image";
 import { ModeToggle } from "@/components/ui/dark-mode";
 import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { KindeUser } from "@kinde-oss/kinde-auth-nextjs/types";
+import GitHubButton from "@/components/shared/GithubButton";
+import CommandComponent from "@/components/dashboard/command";
 
 interface TopbarClientProps {
   user: KindeUser<any> | null;
@@ -36,13 +38,19 @@ export function TopbarClient({ user, dropdownMenuItems }: TopbarClientProps) {
   };
 
   return (
-    <>
+    <div className="flex justify-end items-center w-full gap-2">
+     <div className="">
+        <CommandComponent />
+      </div>
+      <div className="div">
+        <GitHubButton />
+      </div>
       <div>
         <ModeToggle />
       </div>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="secondary" size="icon" className="rounded-full">
+          <Button variant="secondary" size="icon" className="rounded-full border border-white">
             {user?.picture ? (
               <Image
                 src={user.picture}
@@ -52,7 +60,7 @@ export function TopbarClient({ user, dropdownMenuItems }: TopbarClientProps) {
                 className="rounded-full h-full w-full border-2 border-sky-500"
               />
             ) : (
-              <CircleUser className="h-5 w-5" />
+              <User2 className="h-5 w-5" />
             )}
             <span className="sr-only">Toggle user menu</span>
           </Button>
@@ -74,6 +82,6 @@ export function TopbarClient({ user, dropdownMenuItems }: TopbarClientProps) {
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
-    </>
+    </div>
   );
 }

@@ -4,13 +4,14 @@ import React, { useCallback, useMemo } from "react"
 import { useParams } from "next/navigation"
 import componentData from "@/lib/componentData"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { CodexOne, InstallationOne } from "./(navbar1)/main"
-import { NavbarOne } from "./(navbar1)/main"
-import { CodexTwo } from "./(navbar2)/Main"
-import { CodexSix, CodexFive, CodexThree, HeroFive, HeroFour, HeroThree, HeroTwo, InstallationFour, HeroSix, InstallationThree, InstallationFive, CodexFour, InstallationTwo, InstallationSix } from "../hero"
-
+import { CodexOne, HeroOne, InstallationOne } from "./(hero1)/main"
+import { CodexTwo, HeroTwo, InstallationTwo } from "./(hero2)/main"
+import { CodexThree, HeroThree, InstallationThree } from "./(hero3)/main"
+import { CodexFour, HeroFour, InstallationFour } from "./(hero4)/main"
+import { CodexFive, HeroFive, InstallationFive } from "./(hero5)/main"
+import { CodexSix, HeroSix, InstallationSix } from "./(hero6)/main"
 const navbarComponents = {
-  "1": NavbarOne  ,
+  "1": HeroOne,
   "2": HeroTwo,
   "3": HeroThree,
   "4": HeroFour,

@@ -185,7 +185,7 @@ export default function Example() {
     },
   ];
   return (
-    <div className="py-8">
+    <div className="py-8 bg-slate-950">
       <PricingHeader
         title="Pricing Plans"
         subtitle="Choose the plan that's right for you"
@@ -364,7 +364,7 @@ interface InstallationPageProps {
 
 export function InstallationPage({ steps }: InstallationPageProps) {
   return (
-    <div className="min-h-screen pt-6 bg-white text-black dark:bg-gray-900 dark:text-white mt-16">
+    <div className="min-h-screen pt-6  mt-16">
       <h1 className="text-3xl font-bold mb-6">Installation</h1>
 
       <Tabs defaultValue="manual" className="w-full">

@@ -16,7 +16,7 @@ const Example =  () => {
             <Image
               height={400}
               width={400}
-              src="/SUI.png"
+              src="/Kharayo.png"
               className="rounded-3xl border w-10 h-10 border-none  shadow-lg"
               alt="Company Logo"
             />
@@ -78,7 +78,7 @@ const Example = async () => {
             <Image
               height={400}
               width={400}
-              src="/SUI.png"
+              src="/Kharayo.png"
               className="rounded-3xl border w-10 h-10 border-none  shadow-lg"
               alt="Company Logo"
             />

@@ -20,25 +20,18 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
-import CommandComponent from "@/components/dashboard/command";
 import { TopbarClient } from "./TopbarClient";
 import { navMenu } from "@/data/navMenu";
 
 // Configuration
 const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || "Acme Inc";
 
-const navItems = [
-  { href: "/dashboard", icon: Home, label: "Dashboard" },
-  { href: "/orders", icon: ShoppingCart, label: "Orders", badge: 6 },
-  { href: "/products", icon: Package2Icon, label: "Products" },
-  { href: "/customers", icon: Users, label: "Customers" },
-  { href: "/analytics", icon: LineChart, label: "Analytics" },
-];
 
 const upgradeCard = {
   show: true,
   title: "Upgrade to Pro",
-  description: "Unlock all features and get unlimited access to our support team.",
+  description:
+    "Unlock all features and get unlimited access to our support team.",
   buttonText: "Upgrade",
 };
 
@@ -47,12 +40,9 @@ const dropdownMenuItems = [
   { label: "Support", action: "support" },
 ];
 
-
 export default async function Topbar() {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
-
-
 
   return (
     <header className="flex h-14 items-center gap-4 sticky top-0 border-b border-sky-800   bg-slate-300 dark:bg-slate-900 px-4 lg:h-[60px] lg:px-6 z-50">
@@ -105,9 +95,7 @@ export default async function Topbar() {
           )}
         </SheetContent>
       </Sheet>
-      <div className="w-full flex-1">
-        <CommandComponent />
-      </div>
+
       <TopbarClient user={user} dropdownMenuItems={dropdownMenuItems} />
     </header>
   );

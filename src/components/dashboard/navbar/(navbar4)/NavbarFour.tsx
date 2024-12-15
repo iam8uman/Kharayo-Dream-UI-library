@@ -249,7 +249,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Cross, Menu, Pause, Play, Plus } from "lucide-react";
-import whysumancode from "@/../public/SUI.png";
+import whysumancode from "@/../public/Kharayo.png";
 
 const Example = () => {
   const [expanded, setExpanded] = useState(false);

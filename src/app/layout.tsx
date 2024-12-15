@@ -7,30 +7,31 @@ const ubuntu = Ubuntu({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title:
-    "SUI | Your Dream UI Library for Next.js, Tailwind CSS, ShadcnUI and Framer Motion",
+    "Kharayo | Your Dream UI Library for Next.js, Tailwind CSS, ShadcnUI and Framer Motion",
   description:
-    "Build responsive and accessible UI components with SUI - a powerful library combining Next.js, Tailwind CSS, shadcn/ui, and Framer Motion for seamless web development.",
+    "Build responsive and accessible UI components with Kharayo - a powerful library combining Next.js, Tailwind CSS, shadcn/ui, and Framer Motion for seamless web development.",
   keywords:
     "UI library, Next.js, Tailwind CSS, shadcn/ui, Framer Motion, responsive design, accessibility, web development",
   authors: [
     { name: "Suman Sharma" },
-    { name: "Why Suma Code?" },
+    { name: "Why Suman Code?" },
     { name: "@whysumancode" },
+    { name: "@iam8uman" },
   ],
   openGraph: {
-    title: "SUI | Modern UI Library for Next.js and Tailwind CSS",
+    title: "Kharayo | Modern UI Library for Next.js and Tailwind CSS",
     description:
-      "Create stunning web interfaces with SUI - combining Next.js, Tailwind CSS, and Framer Motion for powerful, responsive designs.",
+      "Create stunning web interfaces with Kharayo - combining Next.js, Tailwind CSS, and Framer Motion for powerful, responsive designs.",
     type: "website",
-    url: "https://sui.whysumancode.com",
-    images: "https://sui.whysumancode.com/og-image.png",
+    url: "https://Kharayo.whysumancode.com",
+    images: "https://Kharayo.whysumancode.com/og-image.png",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SUI | Next.js UI Library",
+    title: "Kharayo | Next.js UI Library",
     description:
-      "Elevate your web development with SUI - a modern UI library for Next.js and Tailwind CSS.",
-    images: "https://sui.whysumancode.com/twitter-image.jpeg",
+      "Elevate your web development with Kharayo - a modern UI library for Next.js and Tailwind CSS.",
+    images: "https://Kharayo.whysumancode.com/twitter-image.jpeg",
   },
 };
 
@@ -42,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="canonical" href="https://sui.whysumancode.com" />
+        <link rel="canonical" href="https://Kharayo.whysumancode.com" />
       </head>
       <body
         className={`${ubuntu.className} bg-slate-200 dark:bg-slate-950 text-foreground`}
