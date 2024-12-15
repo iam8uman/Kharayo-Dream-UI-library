@@ -12,7 +12,7 @@ interface DashboardLayoutProps {
 }
 
 export const metadata: Metadata = {
-  title: "Hero | Kharayo The DREAM UI Components for Web Development",
+  title: "Components | Kharayo The DREAM UI Components for Web Development",
   description:
     "Explore and manage your UI components with Kharayo Dashboard. Built with Next.js, Tailwind CSS, and Framer Motion for efficient web development.",
   keywords:

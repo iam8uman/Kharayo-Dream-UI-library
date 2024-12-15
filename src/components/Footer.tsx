@@ -5,21 +5,24 @@ import GitHubButton from "./shared/GithubButton";
 const Footer = () => {
   return (
     <div>
+      <section className="px-16">
+        <figure className="relative h-[40vh] ">
+          <img
+            src="https://images.unsplash.com/photo-1433838552652-f9a46b332c40?q=80&w=2070&auto=format&fit=crop"
+            alt=""
+            className="w-full h-full object-cover ml-4  aspect-square"
+            style={{
+              maskImage: "url('/SUI.png')",
+              maskSize: "contain",
+              maskRepeat: "no-repeat",
+              maskPosition: "center",
+            }}
+          />
+        </figure>
+        <GitHubButton />
+      </section>
       <footer className="py-12 border-t-slate-500 sm:pt-16 lg:pt-20">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto text-center">
-            <div className="relative inline-flex mt-12 group">
-              <div
-                className="absolute duration-1000 transform rotate-180 transitiona-all opacity-70 -inset-1 rounded-xl blur-lg filter group-hover:opacity-100 group-hover:-inset-1.5 group-hover:duration-200"
-                style={{
-                  background:
-                    "linear-gradient(90deg, #44ff9a -0.55%, #44b0ff 22.86%, #8b44ff 48.36%, #ff6644 73.33%, #ebff70 99.34%)",
-                }}
-              ></div>
-              <GitHubButton />
-            </div>
-          </div>
-
           <div className="lg:flex  lg:items-center lg:justify-between mt-14 lg:mt-24">
             <div className="flex flex-row items-center justify-center md:items-start gap-2 text-2xl md:text-4xl font-semibold text-sky-500">
               <Image

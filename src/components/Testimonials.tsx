@@ -1,4 +1,3 @@
-
 import React from "react";
 import { AnimatedTestimonials } from "./ui/animated-testimonials";
 
@@ -42,16 +41,18 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <div id="testimonial">
-      <section className="relative py-12 overflow-hidden bg-slate-200 dark:bg-slate-950 sm:py-16">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-sky-500 flex items-center justify-center gap-5 ">
-          <div className="w-6 lg:w-12 h-0.5 lg:h-1.5 rounded-full bg-sky-500"></div>
-          Testimonials
-          <div className="w-6 lg:w-12 h-0.5 lg:h-1.5 rounded-full bg-sky-500"></div>
-        </h2>
-        <AnimatedTestimonials testimonials={testimonials} />
-      </section>
-    </div>
+    <>
+      <div id="testimonial">
+        <section className="relative py-12 overflow-hidden bg-slate-200 dark:bg-slate-950 sm:py-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-sky-500 flex items-center justify-center gap-5 ">
+            <div className="w-6 lg:w-12 h-0.5 lg:h-1.5 rounded-full bg-sky-500"></div>
+            Testimonials
+            <div className="w-6 lg:w-12 h-0.5 lg:h-1.5 rounded-full bg-sky-500"></div>
+          </h2>
+          <AnimatedTestimonials testimonials={testimonials} />
+        </section>
+      </div>
+    </>
   );
 };
 
