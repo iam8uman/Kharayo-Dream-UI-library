@@ -89,7 +89,7 @@ export default function Sidebar() {
                       {item.label}
                     </span>
                     {item.badge && !isCollapsed && (
-                      <Badge className="ml-auto w-6 flex shrink-0 items-center justify-center rounded-full bg-white dark:text-black text-black border-black">
+                      <Badge className="ml-auto w-auto flex shrink-0 items-center justify-center rounded-full bg-slate-300 dark:text-black text-black border-black text-xs">
                         {item.badge}
                       </Badge>
                     )}
