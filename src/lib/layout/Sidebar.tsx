@@ -17,6 +17,7 @@ import { navMenu } from "@/data/navMenu"; // Adjust the import path as needed
 import { cn } from "../utils";
 import { useState } from "react";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
+import Image from "next/image";
 
 export default function Sidebar() {
   const currentPath = usePathname();
@@ -32,9 +33,23 @@ export default function Sidebar() {
         <div className="flex h-14 items-center border-b border-sky-800 px-4 lg:h-[60px]">
           <Link href="/" className="flex items-center font-semibold">
             {/* <Package2 className="h-6 w-6" /> */}
-            <span className={`${isCollapsed ? "hidden" : "block"} text-sky-500 text-2xl font-semibold`}>
-            <span>Kharayo</span>🌟
-            </span>
+            <div
+              className={`${
+                isCollapsed ? "hidden" : "block"
+              } text-sky-500 text-2xl font-semibold flex justify-center items-center `}
+            >
+              <span className=" logo px-2 group slide-anime cursor-pointer ">
+                <Image
+                  height={400}
+                  width={400}
+                  src="/SUI.png"
+                  className="rounded-3xl border w-8 h-8 scale-110 border-none"
+                  alt="Company Logo"
+                />
+                <span className="sr-only">Company Logo</span>
+              </span>
+              <span className="uppercase">Kharayo</span>
+            </div>
           </Link>
           <Button
             variant="outline"
@@ -65,7 +80,7 @@ export default function Sidebar() {
                       "group flex items-center text-[15px] gap-3 px-4 py-2 transition-all",
                       isActive
                         ? "bg-sky-500 text-black dark:text-white hover:bg-sky-500/90 hover:text-white"
-                        : "text-muted-foreground dark:text-slate-500 hover:text-black hover:dark:text-white",
+                        : "text-muted-foreground dark:text-slate-500 hover:text-black hover:dark:text-white hover:translate-x-2",
                       ""
                     )}
                   >
