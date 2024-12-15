@@ -8,41 +8,41 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-import { Separator } from "@/components/ui/separator"
+} from "@/components/ui/breadcrumb";
+import { Separator } from "@/components/ui/separator";
 import OptimizedPricing from "@/components/dashboard/pricing/optimized-pricing";
 
 const Page: React.FC = () => {
   return (
     <div className="p-4">
       <div className="flex-1">
-      <Breadcrumb>
-        <BreadcrumbList>
-          <BreadcrumbItem>
-            <BreadcrumbLink href="/">Home</BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <BreadcrumbLink href="/dashboard">dashboard</BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <BreadcrumbPage>Hero</BreadcrumbPage>
-          </BreadcrumbItem>
-        </BreadcrumbList>
-      </Breadcrumb>
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/">Home</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/dashboard">dashboard</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>Hero</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
 
-      <div className="text-4xl text-start items-top mt-6">Hero</div>
-      <div className="text-sm text-slate-500 text-start items-top mb-4">
-        A collection of links for navigating websites.
+        <div className="text-4xl text-start items-top mt-6">Hero</div>
+        <div className="text-sm text-slate-500 text-start items-top mb-4">
+          A collection of links for navigating websites.
+        </div>
       </div>
-    </div>
-    <Separator className="bg-gradient-to-r from-indigo-500 to-sky-500 my-6" />
+      <Separator className="bg-gradient-to-r from-indigo-500 to-sky-500 my-6" />
       <OptimizedPricing />
       <Blockquote className="bg-slate-900  text-slate-50 border-slate-100 border my-6">
         Hero today, legend tomorrow!
         <div className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-sky-500  text-end">
-          CEO @whysumancode.com
+          CEO
         </div>
       </Blockquote>
     </div>

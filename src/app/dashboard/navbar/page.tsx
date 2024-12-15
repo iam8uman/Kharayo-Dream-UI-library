@@ -41,7 +41,7 @@ const Page: React.FC = () => {
       <Blockquote className="bg-slate-900  text-slate-50 border-slate-100 border my-6">
         Hero today, legend tomorrow!
         <div className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-sky-500  text-end">
-          CEO @whysumancode.com
+          CEO
         </div>
       </Blockquote>
     </div>
