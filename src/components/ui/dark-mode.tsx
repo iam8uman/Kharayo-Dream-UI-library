@@ -27,7 +27,7 @@ export function ModeToggle() {
       variant="outline"
       size="icon"
       onClick={toggleTheme}
-      className="shrink-0 rounded-full transition border border-white"
+      className="shrink-0 rounded-full transition"
     >
       {theme === "dark" ? (
         <Sun className="h-[1.2rem] w-[1.2rem]" />

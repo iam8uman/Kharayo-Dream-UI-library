@@ -1,21 +1,12 @@
 import {
   ArrowRight,
-  CheckCircle,
-  ChefHat,
-  Layers,
-  Ratio,
-  Ship,
-  UserCheck2,
+  CheckCircle
 } from "lucide-react";
 import React from "react";
-import { LoginLink } from "@kinde-oss/kinde-auth-nextjs/components";
-import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import Link from "next/link";
 import Image from "next/image";
 
 const Hero = async () => {
-  const { getUser } = getKindeServerSession();
-  const user = await getUser();
   return (
     <div className="h-screen">
       <section className="relative h-auto w-full flex flex-col items-center pt-32 bg-slate-200 dark:bg-slate-950">
@@ -26,7 +17,7 @@ const Hero = async () => {
               height={400}
               width={400}
               src="/SUI.png"
-              className="rounded-3xl border w-20 h-20 scale-110 border-none  shadow-lg"
+              className="rounded-3xl border w-20 h-20 scale-110 border-none"
               alt="Company Logo"
             />
             <span className="sr-only">Company Logo</span>
@@ -95,7 +86,7 @@ const Hero = async () => {
           <span className="bg-sky-500 px-2 text-slate-950 dark:text-slate-100">
             amazing
           </span>{" "}
-          brand
+          platforms
           <div className="w-6 lg:w-12 h-0.5 lg:h-1.5 rounded-full bg-sky-500"></div>
         </div>
         <div className="w-full text-5xl py-8  inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)] ">
