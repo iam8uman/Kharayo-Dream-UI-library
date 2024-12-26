@@ -14,6 +14,12 @@ const nextConfig = {
         "tailwindui.com",
         "images.pexels.com"
       ],
+      remotePatterns: [
+        {
+          protocol: "https",
+          hostname: "cdn.sanity.io",
+        },
+      ],
     },
   };
   

@@ -38,12 +38,12 @@ const Navbar = async () => {
               </Link>
             </li>
             <li>
-              <a
-                href="#feature"
+            <Link
+                href="/blog"
                 className="px-2 backdrop:blur-md  text-sky-500  hover:text-black hover:dark:text-white ease-in-out rounded-full transition-all cursor-pointer"
               >
-                Activity
-              </a>
+                Blog
+              </Link>
             </li>
             <li>
               <a
