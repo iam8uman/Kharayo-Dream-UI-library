@@ -1,20 +1,18 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
 const colors = require("tailwindcss/colors");
 const defaultTheme = require("tailwindcss/defaultTheme");
 
-
-
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -74,22 +72,27 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        'infinite-scroll': {
-          from: { transform: 'translateX(0)' },
-          to: { transform: 'translateX(-100%)' },
+        "infinite-scroll": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        'infinite-scroll': 'infinite-scroll 25s linear infinite',
+        "infinite-scroll": "infinite-scroll 25s linear infinite",
       },
     },
   },
-  plugins: [require("tailwindcss-animate"),require("@tailwindcss/typography"),addVariablesForColors],
-} satisfies Config
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@tailwindcss/typography"),
+    addVariablesForColors,
+    require("tailwindcss-motion"),
+  ],
+} satisfies Config;
 
-export default config
+export default config;
 
 // This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
 function addVariablesForColors({ addBase, theme }: any) {
@@ -97,7 +100,7 @@ function addVariablesForColors({ addBase, theme }: any) {
   let newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
   );
- 
+
   addBase({
     ":root": newVars,
   });

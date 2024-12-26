@@ -7,11 +7,13 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { PortableText } from "@portabletext/react";
 import { format } from "date-fns";
-import { Clock, Calendar, User } from "lucide-react";
+import { Clock, Calendar, User, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { TracingBeam } from "@/components/ui/tracking-beam";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -21,6 +23,7 @@ const fadeIn = {
 export default function Page({ params }: { params: { slug: string } }) {
   const [post, setPost] = useState<Post | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const router = useRouter();
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -70,6 +73,21 @@ export default function Page({ params }: { params: { slug: string } }) {
 
   return (
     <div className="min-h-screen bg-transparent">
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        className="fixed top-10 left-4 z-50 ml-4"
+      >
+        <Button
+          variant={"default"}
+          onClick={() => router.back()}
+          className="inline-flex items-center px-4 py-2 rounded-lg text-white bg-slate-800 hover:bg-slate-900 shadow-md hover:shadow-lg transition-all duration-200 group "
+        >
+          <ArrowLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" />
+          <span>Back</span>
+        </Button>
+      </motion.div>
+
       <TracingBeam className="px-6">
         <article className="container mx-auto px-4 py-16 max-w-4xl">
           <motion.header
@@ -174,7 +192,7 @@ export default function Page({ params }: { params: { slug: string } }) {
             </div>
             {post.relatedPosts && post.relatedPosts.length > 0 && (
               <>
-              <Separator className="bg-sky-500 my-6"/>
+                <Separator className="bg-sky-500 my-6" />
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                   Related Posts
                 </h2>
@@ -182,7 +200,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                   {post.relatedPosts.map((relatedPost) => (
                     <Link
                       key={relatedPost._id}
-                      href={`/post/${relatedPost.slug.current}`}
+                      href={`/blog/${relatedPost.slug.current}`}
                       className=" rounded-lg shadow-lg overflow-hidden transform transition-all duration-200 hover:scale-[1.02] hover:shadow-xl"
                     >
                       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">

@@ -47,7 +47,7 @@ export default function Page() {
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
-        className="sticky top-10 left-4 z-50 ml-4"
+        className="fixed top-10 left-4 z-50 ml-4"
       >
         <Button
           variant={"default"}
@@ -88,13 +88,13 @@ export default function Page() {
               variants={container}
               initial="hidden"
               animate="show"
-              className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+              className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 motion-preset-flomoji-🚀"
             >
               {posts.map((post) => (
                 <motion.div key={post._id} variants={item}>
                   <Link
                     href={`/blog/${post.slug.current}`}
-                    className="group-hover:-bottom-5 right-0 h-64 w-[80%] group-hover:border-4 border-4 group-hover:border-[#76aaf82d] rounded-lg object-cover transition-all duration-300"
+                    className="group-hover:-bottom-5 right-0 h-64 w-[80%] group-hover:border-4 border-4 group-hover:border-[#76aaf82d] rounded-lg object-cover transition-all duration-300 "
                   >
                     <article className="group bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-all duration-200 hover:scale-[1.02] hover:shadow-xl">
                       <div className="aspect-video relative">
