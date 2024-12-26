@@ -50,6 +50,9 @@ importers:
       '@sanity/vision':
         specifier: '3'
         version: 3.68.3(@babel/runtime@7.25.6)(@codemirror/lint@6.8.4)(@codemirror/theme-one-dark@6.1.2)(@emotion/is-prop-valid@1.2.2)(codemirror@6.0.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+      '@studio-freight/lenis':
+        specifier: ^1.0.42
+        version: 1.0.42
       '@tabler/icons-react':
         specifier: ^3.12.0
         version: 3.14.0(react@18.3.1)
@@ -10190,6 +10193,8 @@ snapshots:
       '@sentry/core': 8.47.0
       hoist-non-react-statics: 3.3.2
       react: 18.3.1
+
+  '@studio-freight/lenis@1.0.42': {}
 
   '@swc/counter@0.1.3': {}
 

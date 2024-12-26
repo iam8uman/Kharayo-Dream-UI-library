@@ -42,7 +42,7 @@ const Navbar = async () => {
                 href="/blog"
                 className="px-2 backdrop:blur-md  text-sky-500  hover:text-black hover:dark:text-white ease-in-out rounded-full transition-all cursor-pointer"
               >
-                Blog
+                Blogs
               </Link>
             </li>
             <li>

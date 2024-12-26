@@ -44,7 +44,7 @@ export default function NavbarLayout({
     <>
       <Head>
         <title>
-          {"Hero | Kharayo The DREAM UI Components for Web Development"}
+          {"Blogs | Kharayo The DREAM UI Components for Web Development"}
         </title>
         <meta
           name="description"
@@ -58,7 +58,7 @@ export default function NavbarLayout({
         <meta
           property="og:title"
           content={
-            "Navbar | Kharayo The DREAM UI Components for Web Development"
+            "Blogs | Kharayo The DREAM UI Components for Web Development"
           }
         />
         <meta
@@ -87,7 +87,7 @@ export default function NavbarLayout({
         <Boxes />
 
         {/* Content */}
-        <div className="relative z-10">
+        <div className="relative z-10 bg-slate-950">
           <main className="container mx-auto px-4 py-8">{children}</main>
         </div>
       </div>

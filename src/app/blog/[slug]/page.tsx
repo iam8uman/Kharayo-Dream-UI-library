@@ -10,6 +10,8 @@ import { format } from "date-fns";
 import { Clock, Calendar, User } from "lucide-react";
 import Link from "next/link";
 import { TracingBeam } from "@/components/ui/tracking-beam";
+import { Separator } from "@/components/ui/separator";
+import { Badge } from "@/components/ui/badge";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -162,16 +164,17 @@ export default function Page({ params }: { params: { slug: string } }) {
             </h2>
             <div className="flex flex-wrap gap-2 mb-8">
               {post.categories.map((category) => (
-                <span
+                <Badge
                   key={category._id}
-                  className="px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-full text-gray-600 dark:text-gray-300"
+                  className="px-4 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-gray-600 dark:text-gray-300"
                 >
-                  {category.title}
-                </span>
+                  {`#${category.title}`}
+                </Badge>
               ))}
             </div>
             {post.relatedPosts && post.relatedPosts.length > 0 && (
               <>
+              <Separator className="bg-sky-500 my-6"/>
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                   Related Posts
                 </h2>
@@ -180,6 +183,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                     <Link
                       key={relatedPost._id}
                       href={`/post/${relatedPost.slug.current}`}
+                      className=" rounded-lg shadow-lg overflow-hidden transform transition-all duration-200 hover:scale-[1.02] hover:shadow-xl"
                     >
                       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
                         {relatedPost.mainImage && (
@@ -195,9 +199,14 @@ export default function Page({ params }: { params: { slug: string } }) {
                           </div>
                         )}
                         <div className="p-4">
-                          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                            {relatedPost.title}
-                          </h3>
+                          <div className="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-sky-600 dark:group-hover:text-sky-400 line-clamp-2">
+                            {post.title}
+                          </div>
+                          {post.excerpt && (
+                            <p className="text-gray-600 dark:text-gray-300 line-clamp-2">
+                              {post.excerpt}
+                            </p>
+                          )}
                           <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
                             <span>
                               {format(
