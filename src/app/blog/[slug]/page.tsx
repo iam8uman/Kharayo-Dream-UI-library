@@ -14,6 +14,7 @@ import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { urlFor } from "@/lib/sanity";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -72,7 +73,7 @@ export default function Page({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <div className="min-h-screen bg-transparent">
+    <div className="min-h-screen bg-slate-100 dark:bg-transparent">
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
@@ -89,7 +90,7 @@ export default function Page({ params }: { params: { slug: string } }) {
       </motion.div>
 
       <TracingBeam className="px-6">
-        <article className="container mx-auto px-4 py-16 max-w-4xl">
+        <article className="container mx-auto px-4 py-16 max-w-4xl bg-transparent">
           <motion.header
             initial="hidden"
             animate="show"
@@ -97,14 +98,14 @@ export default function Page({ params }: { params: { slug: string } }) {
             className="mb-16"
           >
             <motion.h1
-              className="text-5xl font-bold text-white mb-8"
+              className="text-5xl font-bold text-slate-950 dark:text-white mb-8"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
             >
               {post.title}
             </motion.h1>
             <div className="flex flex-wrap items-center gap-6 mb-8 text-sm">
-              <div className="flex items-center text-lg text-slate-400">
+              <div className="flex items-center text-lg text-slate-500">
                 <Image
                   src={
                     post.author.image?.asset?.url ||
@@ -120,11 +121,11 @@ export default function Page({ params }: { params: { slug: string } }) {
                 />
                 {post.author.name}
               </div>
-              <div className="flex items-center text-slate-400">
+              <div className="flex items-center text-slate-500">
                 <Calendar className="w-5 h-5 mr-2" />
                 {format(new Date(post.publishedAt), "MMMM d, yyyy")}
               </div>
-              <div className="flex items-center text-slate-400">
+              <div className="flex items-center text-slate-500">
                 <Clock className="w-5 h-5 mr-2" />
                 {post.readingTime} min read
               </div>
@@ -140,19 +141,21 @@ export default function Page({ params }: { params: { slug: string } }) {
                   src={post.mainImage.asset.url}
                   alt={post.mainImage.alt || post.title}
                   fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="rounded-lg h-full w-full object-cover"
                   placeholder={post.mainImage.lqip ? "blur" : "empty"}
                   blurDataURL={post.mainImage.lqip}
                 />
               </motion.div>
             )}
           </motion.header>
+
+          <Separator className="bg-sky-500 my-12" />
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="prose prose-lg dark:prose-invert"
+            className="prose dark:prose-invert prose-lg"
           >
             <PortableText
               value={post.body}
@@ -167,6 +170,96 @@ export default function Page({ params }: { params: { slug: string } }) {
                       {children}
                     </motion.p>
                   ),
+                  h1: ({ children }) => (
+                    <motion.h1
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.6 }}
+                      className="text-4xl font-bold mt-8 mb-4"
+                    >
+                      {children}
+                    </motion.h1>
+                  ),
+                  h2: ({ children }) => (
+                    <motion.h2
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.6 }}
+                      className="text-3xl font-bold mt-8 mb-4"
+                    >
+                      {children}
+                    </motion.h2>
+                  ),
+                },
+                types: {
+                  image: ({ value }) => {
+                    if (!value?.asset) {
+                      return null;
+                    }
+                    return (
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.6 }}
+                        className="relative my-8 rounded-lg overflow-hidden"
+                      >
+                        <Image
+                          src={urlFor(value).url()}
+                          alt={value.alt || " "}
+                          width={800}
+                          height={450}
+                          className="rounded-lg h-full w-full object-contain"
+                          placeholder={
+                            value.asset.metadata?.lqip ? "blur" : "empty"
+                          }
+                          blurDataURL={value.asset.metadata?.lqip}
+                        />
+                        {value.caption && (
+                          <p className="text-sm text-gray-500 dark:text-gray-400 text-center mt-2">
+                            {value.caption}
+                          </p>
+                        )}
+                      </motion.div>
+                    );
+                  },
+                },
+                marks: {
+                  link: ({ children, value }) => {
+                    const rel = !value.href.startsWith("/")
+                      ? "noreferrer noopener"
+                      : undefined;
+                    return (
+                      <a
+                        href={value.href}
+                        rel={rel}
+                        className="text-blue-600 dark:text-blue-400 hover:underline"
+                      >
+                        {children}
+                      </a>
+                    );
+                  },
+                },
+                list: {
+                  bullet: ({ children }) => (
+                    <motion.ul
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.6 }}
+                      className="list-disc list-outside ml-4 mt-4"
+                    >
+                      {children}
+                    </motion.ul>
+                  ),
+                  number: ({ children }) => (
+                    <motion.ol
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.6 }}
+                      className="list-decimal list-outside ml-4 mt-4"
+                    >
+                      {children}
+                    </motion.ol>
+                  ),
                 },
               }}
             />
@@ -177,14 +270,12 @@ export default function Page({ params }: { params: { slug: string } }) {
             transition={{ delay: 0.8 }}
             className="mt-16"
           >
-            <h2 className="text-2xl font-bold text-white mb-4">
-              Categories
-            </h2>
+            <h2 className="text-2xl font-bold text-slate-950 dark:text-white mb-4">Categories</h2>
             <div className="flex flex-wrap gap-2 mb-8">
               {post.categories.map((category) => (
                 <Badge
                   key={category._id}
-                  className="px-4 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-gray-600 dark:text-gray-300"
+                  className="px-4 py-1"
                 >
                   {`#${category.title}`}
                 </Badge>
@@ -193,7 +284,7 @@ export default function Page({ params }: { params: { slug: string } }) {
             {post.relatedPosts && post.relatedPosts.length > 0 && (
               <>
                 <Separator className="bg-sky-500 my-6" />
-                <h2 className="text-2xl font-bold text-white mb-4">
+                <h2 className="text-2xl font-bold text-slate-950 dark:text-white mb-4">
                   Related Posts
                 </h2>
                 <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">

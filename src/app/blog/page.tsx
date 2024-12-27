@@ -62,7 +62,7 @@ export default function Page() {
         <motion.h1
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-5xl font-bold text-white mb-16 text-center"
+          className="text-5xl font-bold text-slate-950 dark:text-white mb-16 text-center"
         >
           Su-manifest ✍️
         </motion.h1>
@@ -91,7 +91,11 @@ export default function Page() {
               className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 motion-preset-flomoji-🚀"
             >
               {posts.map((post) => (
-                <motion.div key={post._id} variants={item} className="[background:linear-gradient(45deg,#080b11,theme(colors.slate.800)_50%,#172033)_padding-box,conic-gradient(from_var(--border-angle),theme(colors.slate.600/.48)_80%,_theme(colors.indigo.500)_86%,_theme(colors.indigo.300)_90%,_theme(colors.indigo.500)_94%,_theme(colors.slate.600/.48))_border-box] rounded-2xl border border-transparent animate-border">
+                <motion.div
+                  key={post._id}
+                  variants={item}
+                  className="[background:linear-gradient(45deg,#080b11,theme(colors.slate.800)_50%,#172033)_padding-box,conic-gradient(from_var(--border-angle),theme(colors.slate.600/.48)_80%,_theme(colors.indigo.500)_86%,_theme(colors.indigo.300)_90%,_theme(colors.indigo.500)_94%,_theme(colors.slate.600/.48))_border-box] rounded-2xl border border-transparent animate-border"
+                >
                   <Link
                     href={`/blog/${post.slug.current}`}
                     className="transition-all duration-300"
@@ -171,7 +175,7 @@ export default function Page() {
           )}
         </AnimatePresence>
       </div>
-      <footer className="py-12 border-t-slate-500 sm:pt-16 lg:pt-20 z-50">
+      <footer className="py-12 bg-black border-t-slate-500 sm:pt-16 lg:pt-20 z-50">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="lg:flex  lg:items-center lg:justify-between mt-14 lg:mt-24">
             <div className="flex flex-row items-center justify-center md:items-start gap-2 text-2xl md:text-4xl font-semibold text-sky-500">

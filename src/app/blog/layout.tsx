@@ -83,11 +83,10 @@ export default function NavbarLayout({
           }
         />
       </Head>
-      <div className="min-h-screen relative overflow-hidden bg-gray-50 dark:bg-gray-900">
+      <div className="min-h-screen relative overflow-hidden">
         <Boxes />
-
         {/* Content */}
-        <div className="relative z-10 bg-slate-950">
+        <div className="relative z-10">
           <main className="container mx-auto px-4 py-8">{children}</main>
         </div>
       </div>
