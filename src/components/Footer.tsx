@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import GitHubButton from "./shared/GithubButton";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -50,14 +51,14 @@ const Footer = () => {
               </li>
 
               <li>
-                <a
-                  href="#feature"
+                <Link
+                  href="/blog"
                   title=""
                   className="text-lg font-medium dark:text-slate-100 text-gray-900 transition-all duration-200 font-pj hover:text-sky-600 hover:dark:text-sky-500"
                 >
                   {" "}
-                  Features{" "}
-                </a>
+                  Blogs{" "}
+                </Link>
               </li>
 
               <li>

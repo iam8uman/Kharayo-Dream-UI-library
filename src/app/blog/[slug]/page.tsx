@@ -36,7 +36,7 @@ export default function Page({ params }: { params: { slug: string } }) {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
+      <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800">
         <div className="container mx-auto px-4 py-16 max-w-4xl">
           <motion.div
             className="space-y-8"
@@ -97,7 +97,7 @@ export default function Page({ params }: { params: { slug: string } }) {
             className="mb-16"
           >
             <motion.h1
-              className="text-5xl font-bold text-gray-900 dark:text-white mb-8"
+              className="text-5xl font-bold text-white mb-8"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
             >
@@ -177,7 +177,7 @@ export default function Page({ params }: { params: { slug: string } }) {
             transition={{ delay: 0.8 }}
             className="mt-16"
           >
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-2xl font-bold text-white mb-4">
               Categories
             </h2>
             <div className="flex flex-wrap gap-2 mb-8">
@@ -193,7 +193,7 @@ export default function Page({ params }: { params: { slug: string } }) {
             {post.relatedPosts && post.relatedPosts.length > 0 && (
               <>
                 <Separator className="bg-sky-500 my-6" />
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                <h2 className="text-2xl font-bold text-white mb-4">
                   Related Posts
                 </h2>
                 <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
