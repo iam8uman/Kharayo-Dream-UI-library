@@ -73,7 +73,7 @@ export default function Page({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <div className="min-h-screen bg-slate-100 dark:bg-transparent">
+    <div className="min-h-screen">
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}

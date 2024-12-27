@@ -175,7 +175,7 @@ export default function Page() {
           )}
         </AnimatePresence>
       </div>
-      <footer className="py-12 bg-black border-t-slate-500 sm:pt-16 lg:pt-20 z-50">
+      <footer className="py-12 bg-slate-950 border-t-slate-500 sm:pt-16 lg:pt-20 z-50">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="lg:flex  lg:items-center lg:justify-between mt-14 lg:mt-24">
             <div className="flex flex-row items-center justify-center md:items-start gap-2 text-2xl md:text-4xl font-semibold text-sky-500">
