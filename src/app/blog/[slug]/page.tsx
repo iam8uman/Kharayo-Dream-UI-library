@@ -309,7 +309,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                         )}
                         <div className="p-4">
                           <div className="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-sky-600 dark:group-hover:text-sky-400 line-clamp-2">
-                            {post.title}
+                            {relatedPost.title}
                           </div>
                           {post.excerpt && (
                             <p className="text-gray-600 dark:text-gray-300 line-clamp-2">
