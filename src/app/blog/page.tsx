@@ -11,6 +11,7 @@ import { Clock, ArrowLeft } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import fluidCursor from "@/lib/hooks/useFluidCursor";
 
 const container = {
   hidden: { opacity: 0 },
@@ -41,8 +42,16 @@ export default function Page() {
     fetchPosts();
   }, []);
 
+  useEffect(() => {
+    fluidCursor();
+  }, []);
+
   return (
-    <div className="min-h-screen">
+    <div className="h-full w-full ">
+      <canvas
+        id="fluid"
+        className=" fixed bottom-0 left-0 right-0 top-0 h-full w-full"
+      />
       <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] -z-50"></div>
       <motion.div
         initial={{ opacity: 0, x: -20 }}
@@ -79,7 +88,7 @@ export default function Page() {
                 <motion.div
                   key={n}
                   variants={item}
-                  className="h-64 dark:bg-gray-700 rounded-lg animate-pulse"
+                  className="h-64 bg-black rounded-lg animate-pulse"
                 />
               ))}
             </motion.div>
@@ -100,7 +109,7 @@ export default function Page() {
                     href={`/blog/${post.slug.current}`}
                     className="transition-all duration-300"
                   >
-                    <article className="group bg-gray-800 rounded-2xl shadow-lg overflow-hidden transform transition-all duration-200 hover:shadow-xl">
+                    <article className="group bg-black rounded-2xl shadow-lg overflow-hidden transform transition-all duration-200 hover:shadow-xl">
                       <div className="aspect-video relative">
                         {post.mainImage && (
                           <Image
@@ -125,15 +134,21 @@ export default function Page() {
                               className="rounded-full w-10 h-10 object-cover border border-sky-500"
                             />
                           )}
-                          <div>
-                            <p className="text-sm font-medium text-white">
-                              {post.author.name}
-                            </p>
-                            <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
-                              {format(
-                                new Date(post.publishedAt),
-                                "MMMM d, yyyy"
-                              )}
+                          <div className="w-full flex justify-between items-center">
+                            <div>
+                              <p className="text-sm font-medium text-white">
+                                {post.author.name}
+                              </p>
+                              <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                                {format(
+                                  new Date(post.publishedAt),
+                                  "MMMM d, yyyy"
+                                )}
+                              </div>
+                            </div>
+                            <div className="flex items-center text-sm text-slate-100 ">
+                              <Clock className="w-4 h-4 mr-1" />
+                              {post.readingTime} min read
                             </div>
                           </div>
                         </div>
@@ -150,21 +165,39 @@ export default function Page() {
                             {post.categories.slice(0, 2).map((category) => (
                               <Badge
                                 key={category._id}
-                                className="px-2 py-1 bg-gray-100 dark:bg-sky-600 text-xs rounded-full text-gray-600 dark:text-gray-300"
+                                className="px-2 py-1 bg-gradient-to-r from-purple-500 to-sky-600 text-white text-xs rounded-full"
                               >
                                 {category.title}
                               </Badge>
                             ))}
                             {post.categories.length > 3 && (
-                              <Badge className="px-2 py-1 bg-gray-100  text-gray-900 text-xs rounded-full">
+                              <Badge className="px-2 py-1 bg-gradient-to-r from-purple-500 to-sky-600 text-white text-xs rounded-full">
                                 +{post.categories.length - 3}
                               </Badge>
                             )}
                           </div>
-                          <div className="flex items-center text-sm text-slate-100 ">
-                            <Clock className="w-4 h-4 mr-1" />
-                            {post.readingTime} min read
-                          </div>
+                          <button className=" relative inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-gradient-to-r dark:from-[#070e41] dark:to-[#263381] from-[#c0c7ff] to-[#4c64ff]  font-medium text-neutral-200 border-2 border-[#656fe2] transition-all duration-300 group-hover:w-32">
+                            <div className="inline-flex whitespace-nowrap opacity-0 transition-all duration-200 group-hover:-translate-x-3 group-hover:opacity-100">
+                              Visit
+                            </div>
+                            <div className="absolute right-3.5">
+                              <svg
+                                width="15"
+                                height="15"
+                                viewBox="0 0 15 15"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-5 w-5"
+                              >
+                                <path
+                                  d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
+                                  fill="currentColor"
+                                  fillRule="evenodd"
+                                  clipRule="evenodd"
+                                ></path>
+                              </svg>
+                            </div>
+                          </button>
                         </div>
                       </div>
                     </article>
