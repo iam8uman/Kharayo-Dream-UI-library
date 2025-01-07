@@ -87,6 +87,10 @@ export default function NavbarLayout({
         <Boxes />
         {/* Content */}
         <div className="relative z-10 dark:bg-slate-950">
+        <canvas
+        id="fluid"
+        className=" fixed bottom-0 left-0 right-0 top-0 h-full w-full"
+      />
           <main className="container mx-auto px-4 py-8">{children}</main>
         </div>
       </div>
